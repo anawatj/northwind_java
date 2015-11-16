@@ -5,9 +5,9 @@ import com.fasterxml.jackson.annotation.JsonInclude.Include;
 import com.tao.northwindj.domains.AbstractDomain;
 import com.tao.northwindj.domains.master.Regions;
 @JsonInclude(value=Include.NON_NULL)
-public class Terrtories extends AbstractDomain<Long>{
+public class Territories extends AbstractDomain<Long>{
 	
-	public Terrtories()
+	public Territories()
 	{
 		
 	}
@@ -20,6 +20,10 @@ public class Terrtories extends AbstractDomain<Long>{
 		this.name = name;
 	}
 	public Regions getRegion() {
+		if(this.region!=null &&(this.region.getId()==null || this.region.getId()==0))
+		{
+			return null;
+		}
 		return region;
 	}
 	public void setRegion(Regions region) {

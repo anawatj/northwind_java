@@ -1,20 +1,15 @@
-package com.tao.northwindj.domains.customers;
-
-import java.util.HashSet;
-import java.util.Set;
+package com.tao.northwindj.domains.suppliers;
 
 import com.tao.northwindj.domains.AbstractDomain;
 import com.tao.northwindj.domains.master.City;
 import com.tao.northwindj.domains.master.Country;
-import com.tao.northwindj.domains.master.DemoGraphics;
 import com.tao.northwindj.domains.master.Regions;
 
-public class Customers extends AbstractDomain<Long> {
-	public Customers()
+public class Suppliers extends AbstractDomain<Long>{
+	public Suppliers()
 	{
-		this.demos = new HashSet<DemoGraphics>();
+		
 	}
-	private String customerCode;
 	private String companyName;
 	private String contactName;
 	private String contactTitle;
@@ -25,13 +20,7 @@ public class Customers extends AbstractDomain<Long> {
 	private Country country;
 	private String phone;
 	private String fax;
-	private Set<DemoGraphics> demos;
-	public String getCustomerCode() {
-		return customerCode;
-	}
-	public void setCustomerCode(String customerCode) {
-		this.customerCode = customerCode;
-	}
+	private String homePage;
 	public String getCompanyName() {
 		return companyName;
 	}
@@ -104,11 +93,12 @@ public class Customers extends AbstractDomain<Long> {
 	public void setFax(String fax) {
 		this.fax = fax;
 	}
-	public Set<DemoGraphics> getDemos() {
-		return demos;
+	public String getHomePage() {
+		return homePage;
 	}
-	public void setDemos(Set<DemoGraphics> demos) {
-		this.demos = demos;
+	public void setHomePage(String homePage) {
+		this.homePage = homePage;
 	}
+	
 	
 }
