@@ -7,6 +7,7 @@ import java.util.Set;
 import com.tao.northwindj.domains.AbstractDomain;
 import com.tao.northwindj.domains.master.City;
 import com.tao.northwindj.domains.master.Country;
+import com.tao.northwindj.domains.master.Department;
 import com.tao.northwindj.domains.master.Regions;
 import com.tao.northwindj.domains.master.Title;
 import com.tao.northwindj.domains.territories.Territories;
@@ -37,6 +38,17 @@ public class Employees extends AbstractDomain<Long> {
 	private Set<Territories> territories;
 	private Set<Education> educations;
 	private Set<Experiences> experiences;
+	private Department department;
+	public Department getDepartment() {
+		if(department!=null&&(this.department.getId()==null || department.getId()==0))
+		{
+			return null;
+		}
+		return department;
+	}
+	public void setDepartment(Department department) {
+		this.department = department;
+	}
 	public Set<Territories> getTerritories() {
 		return territories;
 	}
