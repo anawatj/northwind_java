@@ -22,6 +22,8 @@
     		<mapping resource="/hibernate/ProductsMap.hbm.xml"/>
     		<mapping resource="/hibernate/PurchasesMap.hbm.xml"/>
     		<mapping resource="/hibernate/PurchaseDetailsMap.hbm.xml"/>
+    		<mapping resource="/hibernate/OrdersMap.hbm.xml"/>
+    		<mapping resource="/hibernate/OrderDetailsMap.hbm.xml"/>
     		
     </session-factory>
 </hibernate-configuration>
