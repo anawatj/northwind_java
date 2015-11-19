@@ -5,6 +5,7 @@ import java.util.List;
 import org.hibernate.Criteria;
 import org.hibernate.SessionFactory;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonInclude.Include;
 @JsonInclude(value=Include.NON_NULL)
@@ -36,12 +37,13 @@ public class Result<E> {
 	public void setList(List<E> list) {
 		this.list = list;
 	}
-	
+	@JsonIgnore
 	public Result<E> getFullResult()
 	{
 		this.list = this.criteria.list();
 		return new Result<E>(this.list);
 	}
+	@JsonIgnore
 	public Page<E> getPage(int page)
 	{
 		return new Page<E>(this.criteria,page);
