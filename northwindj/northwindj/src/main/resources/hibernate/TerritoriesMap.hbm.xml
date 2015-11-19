@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd" >
+<hibernate-mapping>
+	<class name="com.tao.northwindj.domains.territories.Territories"
+		table="tbl_territories">
+		<id name="id" column="id" type="long">
+			<generator class="native"></generator>
+		</id>
+		<version name="version" column="version"></version>
+		<property name="name" column="name" length="200"></property>
+		<many-to-one foreign-key="fk_territories_regions" name="region"
+			column="region_id" class="com.tao.northwindj.domains.master.Regions"
+			not-found="ignore"></many-to-one>
+		<property name="createBy" column="create_by" length="20"></property>
+		<property name="createDate" column="create_date"></property>
+		<property name="updateBy" column="update_by" length="20"></property>
+		<property name="updateDate" column="update_date"></property>
+	</class>
+</hibernate-mapping>

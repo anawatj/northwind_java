@@ -10,9 +10,9 @@
 				<property name="contactName" column="contact_name" length="200"></property>
 				<property name="contactTitle" column="contact_title" length="100"></property>
 				<property name="address" column="address" length="1000"></property>
-				<many-to-one foreign-key="fk_customers_city" name="city" class="com.tao.northwindj.domains.master.City" column="city_id" lazy="proxy" not-found="ignore"></many-to-one>
-				<many-to-one foreign-key="fk_customers_region" name="region" class="com.tao.northwindj.domains.master.Regions" column="region_id" lazy="proxy" not-found="ignore"></many-to-one>
-				<many-to-one foreign-key="fk_customers_country" name="country" class="com.tao.northwindj.domains.master.Country" column="country_id" lazy="proxy" not-found="ignore"></many-to-one>
+				<many-to-one foreign-key="fk_customers_city" name="city" class="com.tao.northwindj.domains.master.City" column="city_id"  not-found="ignore"></many-to-one>
+				<many-to-one foreign-key="fk_customers_region" name="region" class="com.tao.northwindj.domains.master.Regions" column="region_id" not-found="ignore"></many-to-one>
+				<many-to-one foreign-key="fk_customers_country" name="country" class="com.tao.northwindj.domains.master.Country" column="country_id"  not-found="ignore"></many-to-one>
 				<property name="postalCode" column="postal_code" length="20"></property>
 				<property name="phone" column="phone" length="20"></property>
 				<property name="fax" column="fax" length="20"></property>

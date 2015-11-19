@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd" >
+<hibernate-mapping>
+			<class name="com.tao.northwindj.domains.employees.Experiences" table="tbl_experiences">
+					<id name="id" column="id" type="long">
+							<generator class="native"></generator>
+					</id>
+					<version name="version" column="version"></version>
+					<property name="employeeId" column="employee_id"></property>
+					<property name="company" column="company" length="200"></property>
+					<property name="start" column="start"></property>
+					<property name="end" column="end"></property>
+					<property name="reasonOfResign"  column="reason_of_resign" length="1000"></property>
+					<property name="salary" column="salary"></property>
+					<property name="createBy" column="create_by" length="20"></property>
+					<property name="createDate" column="create_date"></property>
+					<property name="updateBy" column="update_by" length="20"></property>
+					<property name="updateDate" column="update_date"></property>
+			</class>
+</hibernate-mapping>

@@ -13,6 +13,10 @@
     		<mapping resource="/hibernate/EducationLevelMap.hbm.xml"/>
     		<mapping resource="/hibernate/RegionsMap.hbm.xml"/>
     		<mapping resource="/hibernate/TitleMap.hbm.xml"/>
+    		<mapping resource="/hibernate/EmployeesMap.hbm.xml"/>
+    		<mapping resource="/hibernate/EducationMap.hbm.xml"/>
+    		<mapping resource="/hibernate/ExperiencesMap.hbm.xml"/>
+    		<mapping resource="/hibernate/TerritoriesMap.hbm.xml"/>
     		
     </session-factory>
 </hibernate-configuration>

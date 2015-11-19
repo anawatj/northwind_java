@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd" >
+<hibernate-mapping>
+		<class name="com.tao.northwindj.domains.employees.Employees" table="tbl_employees">
+				<id name="id" column="id" type="long">
+						<generator class="native"></generator>
+				</id>
+				<version name="version" column="version"></version>
+				<many-to-one foreign-key="fk_employees_title" name="title" column="title_id" class="com.tao.northwindj.domains.master.Title" not-found="ignore"></many-to-one>
+				<property name="firstName" column="first_name" length="200"></property>
+				<property name="lastName" column="last_name" length="200"></property>
+				<property name="titleOfCourstesy" column="title_of_courstesy" length="200"></property>
+				<property name="birthDate" column="birth_date"></property>
+				<property name="hireDate" column="hire_date"></property>
+				<property name="address" column="address" length="1000"></property>
+				<many-to-one foreign-key="fk_employees_city" name="city" column="city_id" class="com.tao.northwindj.domains.master.City" not-found="ignore"></many-to-one>
+				<many-to-one foreign-key="fk_employees_regions" name="region" column="region_id" class="com.tao.northwindj.domains.master.Regions" not-found="ignore"></many-to-one>
+				<many-to-one foreign-key="fk_employees_country" name="country" column="country_id" class="com.tao.northwindj.domains.master.Country" not-found="ignore"></many-to-one>
+				<property name="postalCode" column="postal_code" length="20"></property>
+				<property name="homePhone" column="home_phone" length="20"></property>
+				<property name="extention" column="extention" length="20"></property>
+				<property name="notes" column="notes" length="1000"></property>
+				<many-to-one foreign-key="fk_employees_report_to" name="reportTo" column="report_to" class="com.tao.northwindj.domains.employees.Employees" not-found="ignore" ></many-to-one>
+				<many-to-one foreign-key="fk_employees_department" name="department" column="department_id" class="com.tao.northwindj.domains.master.Department" not-found="ignore"></many-to-one>
+				<set name="educations" cascade="all-delete-orphan" lazy="true">
+						<key column="employee_id" foreign-key="fk_education_employees"></key>
+						<one-to-many class="com.tao.northwindj.domains.employees.Education" not-found="ignore"/>
+				</set>
+				<set name="experiences" cascade="all-delete-orphan" lazy="true">
+						<key column="employee_id" foreign-key="fk_experiences_employees"></key>
+						<one-to-many class="com.tao.northwindj.domains.employees.Experiences" not-found="ignore"/>
+				</set>
+				<set name="territories" table="tbl_employees_territories" cascade="all-delete-orphan" lazy="true">
+						<key column="employee_id" foreign-key="fk_employees_employees_territories"></key>
+						<many-to-many class="com.tao.northwindj.domains.territories.Territories" column="territory_id" foreign-key="fk_territories_employee_territories" not-found="ignore">					</many-to-many>
+				</set>
+				<property name="createBy" column="create_by" length="20"></property>
+				<property name="createDate" column="create_date"></property>
+				<property name="updateBy" column="update_by" length="20"></property>
+				<property name="updateDate" column="update_date"></property>
+		</class>
+</hibernate-mapping>
