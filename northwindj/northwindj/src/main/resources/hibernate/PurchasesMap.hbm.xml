@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd" >
+<hibernate-mapping>
+	<class name="com.tao.northwindj.domains.purchases.Purchases"
+		table="tbl_purchases">
+		<id name="id" column="id" type="long">
+			<generator class="native"></generator>
+		</id>
+		<version name="version" column="version"></version>
+		<many-to-one foreign-key="fk_purchases_employees" name="employee"
+			column="employee_id" class="com.tao.northwindj.domains.employees.Employees"
+			not-found="ignore"></many-to-one>
+		<many-to-one foreign-key="fk_purchases_supplier" name="supplier"
+			column="supplier_id" class="com.tao.northwindj.domains.suppliers.Suppliers"
+			not-found="ignore"></many-to-one>
+		<property name="purchaseDate" column="purchase_date"></property>
+		<property name="requireDate" column="require_date"></property>
+		<property name="shippedDate" column="shipped_date"></property>
+		<property name="freight" column="freight"></property>
+		<many-to-one foreign-key="fk_purchases_shippers" name="shipper"
+			column="shipper_id" class="com.tao.northwindj.domains.shippers.Shippers"
+			not-found="ignore"></many-to-one>
+		<set name="details" cascade="all-delete-orphan" lazy="true">
+			<key column="purchase_id" foreign-key="fk_purchase_details_purchase"></key>
+			<one-to-many class="com.tao.northwindj.domains.purchases.PurchaseDetails"
+				not-found="ignore" />
+		</set>
+		<property name="createBy" column="create_by" length="20"></property>
+		<property name="createDate" column="create_date"></property>
+		<property name="updateBy" column="update_by" length="20"></property>
+		<property name="updateDate" column="update_date"></property>
+	</class>
+</hibernate-mapping>

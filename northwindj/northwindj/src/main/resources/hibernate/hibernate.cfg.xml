@@ -17,6 +17,11 @@
     		<mapping resource="/hibernate/EducationMap.hbm.xml"/>
     		<mapping resource="/hibernate/ExperiencesMap.hbm.xml"/>
     		<mapping resource="/hibernate/TerritoriesMap.hbm.xml"/>
+    		<mapping resource="/hibernate/SuppliersMap.hbm.xml"/>
+    		<mapping resource="/hibernate/ShippersMap.hbm.xml"/>
+    		<mapping resource="/hibernate/ProductsMap.hbm.xml"/>
+    		<mapping resource="/hibernate/PurchasesMap.hbm.xml"/>
+    		<mapping resource="/hibernate/PurchaseDetailsMap.hbm.xml"/>
     		
     </session-factory>
 </hibernate-configuration>
