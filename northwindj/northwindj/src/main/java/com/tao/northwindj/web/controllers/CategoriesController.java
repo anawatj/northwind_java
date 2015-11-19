@@ -9,8 +9,10 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 
+import com.tao.northwindj.domains.Page;
 import com.tao.northwindj.domains.Result;
 import com.tao.northwindj.domains.categories.Categories;
+import com.tao.northwindj.domains.categories.CategoriesQuery;
 import com.tao.northwindj.repositories.ICategoriesRepository;
 
 @Controller
@@ -55,5 +57,12 @@ public class CategoriesController {
 		cRepository.remove(entity.getId());
 		return "Success";
 		
+	}
+	@RequestMapping(value="/search",method=RequestMethod.POST)
+	@Transactional
+	public @ResponseBody Page<Categories> search(@RequestBody CategoriesQuery query)
+	{
+		Result<Categories> result = cRepository.findByQuery(query);
+		return result.getPage(query.getPage());
 	}
 }

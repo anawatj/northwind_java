@@ -11,6 +11,7 @@ import org.springframework.stereotype.Repository;
 
 import com.tao.northwindj.domains.Result;
 import com.tao.northwindj.domains.categories.Categories;
+import com.tao.northwindj.domains.categories.CategoriesQuery;
 import com.tao.northwindj.repositories.ICategoriesRepository;
 @Repository(value="categoriesRepository")
 public class CategoriesRepository implements ICategoriesRepository{
@@ -48,6 +49,21 @@ public class CategoriesRepository implements ICategoriesRepository{
 		Categories data= findById(entity.getId());
 		Categories result = (Categories) this.factory.getCurrentSession().merge(entity);
 		return result;
+	}
+
+	public Result<Categories> findByQuery(CategoriesQuery query) {
+		Criteria criteria =factory.getCurrentSession().createCriteria(Categories.class);
+		if(query.getCategoryName()!=null && !query.getCategoryName().equals(""))
+		{
+			if(query.getCategoryName().contains("*") || query.getCategoryName().contains("?"))
+			{
+				criteria.add(Restrictions.like("categoryName",query.getCategoryName().replace("*","%").replace("?", "_")));
+			}else
+			{
+				criteria.add(Restrictions.eq("categoryName",query.getCategoryName()));
+			}
+		}
+		return new Result<Categories>(criteria,factory);
 	}
 
 }
