@@ -14,6 +14,11 @@ import com.tao.northwindj.domains.Result;
 import com.tao.northwindj.domains.SimpleMasterObject;
 import com.tao.northwindj.domains.master.City;
 import com.tao.northwindj.domains.master.Country;
+import com.tao.northwindj.domains.master.DemoGraphics;
+import com.tao.northwindj.domains.master.Department;
+import com.tao.northwindj.domains.master.EducationLevel;
+import com.tao.northwindj.domains.master.Regions;
+import com.tao.northwindj.domains.master.Title;
 import com.tao.northwindj.repositories.imp.MasterRepository;
 
 @Controller
@@ -42,5 +47,39 @@ public class MasterController {
 		return result.getFullResult();
 		
 	}
-
+	@RequestMapping(value="/demographics/all",method=RequestMethod.GET)
+	@Transactional
+	public @ResponseBody Result<SimpleMasterObject> getAllDemoGraphics()
+	{
+		Result<SimpleMasterObject> result = mRepository.findAll(DemoGraphics.class);
+		return result.getFullResult();
+	}
+	@RequestMapping(value="/department/all",method=RequestMethod.GET)
+	@Transactional
+	public @ResponseBody Result<SimpleMasterObject> getAllDepartment()
+	{
+		Result<SimpleMasterObject> result = mRepository.findAll(Department.class);
+		return result.getFullResult();
+	}
+	@RequestMapping(value="/educationLevel/all",method=RequestMethod.GET)
+	@Transactional
+	public @ResponseBody Result<SimpleMasterObject> getAllEducationLevel()
+	{
+		Result<SimpleMasterObject> result = mRepository.findAll(EducationLevel.class);
+		return result.getFullResult();
+	}
+	@RequestMapping(value="/regions/all",method=RequestMethod.GET)
+	@Transactional
+	public @ResponseBody Result<SimpleMasterObject> getAllRegion()
+	{
+		Result<SimpleMasterObject> result = mRepository.findAll(Regions.class);
+		return result.getFullResult();
+	}
+	@RequestMapping(value="/title/all",method=RequestMethod.GET)
+	@Transactional
+	public @ResponseBody Result<SimpleMasterObject> getAllTitle()
+	{
+		Result<SimpleMasterObject> result = mRepository.findAll(Title.class);
+		return result.getFullResult();
+	}
 }
