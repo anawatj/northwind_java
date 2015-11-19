@@ -9,5 +9,12 @@ public class City extends SimpleMasterObject {
 	{
 		
 	}
+	private Long countryId;
+	public Long getCountryId() {
+		return countryId;
+	}
+	public void setCountryId(Long countryId) {
+		this.countryId = countryId;
+	}
 	
 }

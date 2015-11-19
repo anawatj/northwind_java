@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-configuration PUBLIC
+		"-//Hibernate/Hibernate Configuration DTD 3.0//EN"
+		"http://hibernate.sourceforge.net/hibernate-configuration-3.0.dtd">
+<hibernate-configuration>
+    <session-factory>
+    		<mapping resource="/hibernate/CategoriesMap.hbm.xml"></mapping>
+    		<mapping resource="/hibernate/CityMap.hbm.xml"/>
+    		<mapping resource="/hibernate/CountryMap.hbm.xml"/>
+    		<mapping resource="/hibernate/DemoGraphicsMap.hbm.xml"/>
+    		<mapping resource="/hibernate/DepartmentMap.hbm.xml"/>
+    		<mapping resource="/hibernate/EducationLevelMap.hbm.xml"/>
+    		<mapping resource="/hibernate/RegionsMap.hbm.xml"/>
+    		<mapping resource="/hibernate/TitleMap.hbm.xml"/>
+    </session-factory>
+</hibernate-configuration>
