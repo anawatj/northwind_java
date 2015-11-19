@@ -5,6 +5,7 @@
 <hibernate-configuration>
     <session-factory>
     		<mapping resource="/hibernate/CategoriesMap.hbm.xml"></mapping>
+    		<mapping resource="/hibernate/CustomersMap.hbm.xml"/>
     		<mapping resource="/hibernate/CityMap.hbm.xml"/>
     		<mapping resource="/hibernate/CountryMap.hbm.xml"/>
     		<mapping resource="/hibernate/DemoGraphicsMap.hbm.xml"/>
@@ -12,5 +13,6 @@
     		<mapping resource="/hibernate/EducationLevelMap.hbm.xml"/>
     		<mapping resource="/hibernate/RegionsMap.hbm.xml"/>
     		<mapping resource="/hibernate/TitleMap.hbm.xml"/>
+    		
     </session-factory>
 </hibernate-configuration>
