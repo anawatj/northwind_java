@@ -17,10 +17,13 @@
 <script type="text/javascript" src="${context}/resources/theme/js/material.min.js"></script>
 <script type="text/javascript"
 	src="${context}/webjars/angularjs/1.4.4/angular.min.js"></script>
+<script type="text/javascript" src="${context }/resources/lib/ui-bootstrap-tpls-0.14.3.min.js"></script>
+<script type="text/javascript" src="${context }/resources/lib/checklist-model.js"></script>
+<script type="text/javascript" src="${context }/resources/app/app.js"></script>
 
 
 </head>
-<body ng-app="template" >
+<body ng-app="northwind" >
 
 	<nav class="navbar navbar-default">
 		<div class="container-fluid">
