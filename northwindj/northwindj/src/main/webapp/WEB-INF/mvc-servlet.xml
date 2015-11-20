@@ -25,6 +25,7 @@
         </mvc:message-converters>
     </mvc:annotation-driven>
 	<mvc:view-controller path="/index.html" />
+	<mvc:view-controller path="/categories/entry.html"/>
 	<bean id="viewResolver"
 		class="org.springframework.web.servlet.view.InternalResourceViewResolver">
 
