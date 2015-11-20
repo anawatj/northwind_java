@@ -6,4 +6,5 @@
 		<bean id="masterRepository" class="com.tao.northwindj.repositories.imp.MasterRepository"></bean>
 		<bean id="categoriesRepository" class="com.tao.northwindj.repositories.imp.CategoriesRepository"></bean>
 		<bean id="customersRepository" class="com.tao.northwindj.repositories.imp.CustomersRepository"></bean>
+		<bean id="employeesRepository" class="com.tao.northwindj.repositories.imp.EmployeesRepository"></bean>
 </beans>

@@ -11,52 +11,53 @@ import org.springframework.web.bind.annotation.ResponseBody;
 
 import com.tao.northwindj.domains.Page;
 import com.tao.northwindj.domains.Result;
-import com.tao.northwindj.domains.customers.Customers;
-import com.tao.northwindj.domains.customers.CustomersQuery;
-import com.tao.northwindj.repositories.ICustomersRepository;
+import com.tao.northwindj.domains.employees.Employees;
+import com.tao.northwindj.domains.employees.EmployeesQuery;
+import com.tao.northwindj.repositories.IEmployeesRepository;
 
 @Controller
-@RequestMapping(value="/customers")
-public class CustomersController {
+@RequestMapping(value="/employees")
+public class EmployeesController {
+		
 	
 	@Autowired
-	private ICustomersRepository cRepository;
+	private IEmployeesRepository eRepository;
 	
 	
 	@RequestMapping(value="/all",method=RequestMethod.GET)
 	@Transactional
-	public @ResponseBody Result<Customers> getAll()
+	public @ResponseBody Result<Employees> getAll()
 	{
-		Result<Customers> result = cRepository.findAll();
+		Result<Employees> result = eRepository.findAll();
 		return result.getFullResult();
 	}
 	@RequestMapping(value="/single",method=RequestMethod.GET)
 	@Transactional
-	public @ResponseBody Customers getById(@RequestParam Long id)
+	public @ResponseBody Employees getById(@RequestParam Long id)
 	{
-		Customers result = cRepository.findById(id);
+		Employees result = eRepository.findById(id);
 		return result;
+	}
+	@RequestMapping(value="/search",method=RequestMethod.POST)
+	@Transactional
+	public @ResponseBody Page<Employees> search(@RequestBody EmployeesQuery query)
+	{
+		Result<Employees> result = eRepository.findByQuery(query);
+		return result.getPage(query.getPage());
 	}
 	@RequestMapping(value="/save",method=RequestMethod.POST)
 	@Transactional
-	public @ResponseBody Customers save(@RequestBody Customers entity)
+	public @ResponseBody Employees save(@RequestBody Employees entity)
 	{
-		Customers result = cRepository.save(entity);
+		Employees result = eRepository.save(entity);
 		return result;
 	}
 	@RequestMapping(value="/delete",method=RequestMethod.POST)
 	@Transactional
-	public @ResponseBody String delete(@RequestBody Customers entity)
+	public @ResponseBody String delete(@RequestBody Employees data)
 	{
-		cRepository.remove(entity.getId());
-		return "Success";
+		eRepository.remove(data.getId());
+		return "success";
 	}
-	@RequestMapping(value="/search",method=RequestMethod.POST)
-	@Transactional
-	public @ResponseBody Page<Customers> search(@RequestBody CustomersQuery query)
-	{	
-		Result<Customers> result =cRepository.findByQuery(query);
-		return result.getPage(query.getPage());
-		
-	}
+	
 }

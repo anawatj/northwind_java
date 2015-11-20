@@ -34,13 +34,7 @@ public class CategoriesController {
 	public @ResponseBody Categories getById(@RequestParam Long id)
 	{
 		Categories result = cRepository.findById(id);
-		if(result ==null)
-		{
-			return new Categories();
-		}else
-		{
-			return result;
-		}
+		return result;
 		
 	}
 	@RequestMapping(value="/save",method=RequestMethod.POST)
