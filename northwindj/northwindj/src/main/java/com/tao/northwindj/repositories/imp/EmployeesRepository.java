@@ -15,7 +15,7 @@ import com.tao.northwindj.domains.employees.Employees;
 import com.tao.northwindj.domains.employees.EmployeesQuery;
 import com.tao.northwindj.repositories.IEmployeesRepository;
 
-@Repository(value="employeeRepository")
+@Repository(value="employeesRepository")
 public class EmployeesRepository implements IEmployeesRepository {
 
 	@Autowired
