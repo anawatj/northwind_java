@@ -26,6 +26,7 @@
     </mvc:annotation-driven>
 	<mvc:view-controller path="/index.html" />
 	<mvc:view-controller path="/categories/entry.html"/>
+	<mvc:view-controller path="/categories/list.html"/>
 	<bean id="viewResolver"
 		class="org.springframework.web.servlet.view.InternalResourceViewResolver">
 
