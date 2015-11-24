@@ -21,7 +21,14 @@
 <script type="text/javascript" src="${context }/resources/lib/checklist-model.js"></script>
 <script type="text/javascript" src="${context }/resources/app/app.js"></script>
 
-
+	    <style type="text/css">
+            .primary
+            {
+                     color: #fff;
+                     background-color: #337ab7;
+                     border-color: #2e6da4;
+            }
+    </style>
 </head>
 <body ng-app="northwind" >
 
