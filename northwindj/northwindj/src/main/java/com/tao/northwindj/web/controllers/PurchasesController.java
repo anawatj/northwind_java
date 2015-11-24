@@ -11,50 +11,49 @@ import org.springframework.web.bind.annotation.ResponseBody;
 
 import com.tao.northwindj.domains.Page;
 import com.tao.northwindj.domains.Result;
-import com.tao.northwindj.domains.products.Products;
-import com.tao.northwindj.domains.products.ProductsQuery;
-import com.tao.northwindj.repositories.IProductsRepository;
+import com.tao.northwindj.domains.purchases.Purchases;
+import com.tao.northwindj.domains.purchases.PurchasesQuery;
+import com.tao.northwindj.repositories.IPurchasesRepository;
 
 @Controller
-@RequestMapping(value="/products")
-public class ProductsController {
-		
-	@Autowired
-	private IProductsRepository pRepository;
+@RequestMapping(value="/purchases")
+public class PurchasesController {
+
 	
+	@Autowired
+	private IPurchasesRepository pRepository;
 	
 	@RequestMapping(value="/all",method=RequestMethod.GET)
 	@Transactional
-	public @ResponseBody Result<Products> getAll()
+	public @ResponseBody Result<Purchases> getAll()
 	{
-		Result<Products> result= pRepository.findAll();
+		Result<Purchases> result = pRepository.findAll();
 		return result.getFullResult();
 	}
-	
 	@RequestMapping(value="/single",method=RequestMethod.GET)
 	@Transactional
-	public @ResponseBody Products getById(@RequestParam Long id)
+	public @ResponseBody Purchases getById(@RequestParam Long id)
 	{
-		Products result= pRepository.findById(id);
+		Purchases result = pRepository.findById(id);
 		return result;
 	}
 	@RequestMapping(value="/search",method=RequestMethod.POST)
 	@Transactional
-	public @ResponseBody Page<Products> search(@RequestBody ProductsQuery query)
+	public @ResponseBody Page<Purchases> search(@RequestBody PurchasesQuery query)
 	{
-		Result<Products> result= pRepository.findByQuery(query);
+		Result<Purchases> result = pRepository.findByQuery(query);
 		return result.getPage(query.getPage());
 	}
 	@RequestMapping(value="/save",method=RequestMethod.POST)
 	@Transactional
-	public @ResponseBody Products save(@RequestBody Products entity)
+	public @ResponseBody Purchases save(@RequestBody Purchases entity)
 	{
-		Products result = pRepository.save(entity);
+		Purchases result = pRepository.save(entity);
 		return result;
 	}
 	@RequestMapping(value="/delete",method=RequestMethod.POST)
 	@Transactional
-	public @ResponseBody String delete(@RequestBody Products data)
+	public @ResponseBody String delete(@RequestBody Purchases data)
 	{
 		pRepository.remove(data.getId());
 		return "Success";
