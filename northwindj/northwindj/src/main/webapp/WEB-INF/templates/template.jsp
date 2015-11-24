@@ -20,6 +20,15 @@
 <script type="text/javascript" src="${context }/resources/lib/ui-bootstrap-tpls-0.14.3.min.js"></script>
 <script type="text/javascript" src="${context }/resources/lib/checklist-model.js"></script>
 <script type="text/javascript" src="${context }/resources/app/app.js"></script>
+<script type="text/javascript" src="${context }/resources/app/services/categoriesService.js"></script>
+<script type="text/javascript" src="${context }/resources/app/services/customersService.js"></script>
+<script type="text/javascript" src="${context }/resources/app/services/employeesService.js"></script>
+<script type="text/javascript" src="${context }/resources/app/services/ordersService.js"></script>
+<script type="text/javascript" src="${context }/resources/app/services/productsService.js"></script>
+<script type="text/javascript" src="${context }/resources/app/services/purchasesService.js"></script>
+<script type="text/javascript" src="${context }/resources/app/services/shippersService.js"></script>
+<script type="text/javascript" src="${context }/resources/app/services/suppliersService.js"></script>
+<script type="text/javascript" src="${context }/resources/app/services/territoriesService.js"></script>
 
 	    <style type="text/css">
             .primary
