@@ -27,6 +27,8 @@
 	<mvc:view-controller path="/index.html" />
 	<mvc:view-controller path="/categories/entry.html"/>
 	<mvc:view-controller path="/categories/list.html"/>
+	<mvc:view-controller path="/customers/entry.html"/>
+	<mvc:view-controller path="/customers/list.html"/>
 	<bean id="viewResolver"
 		class="org.springframework.web.servlet.view.InternalResourceViewResolver">
 
