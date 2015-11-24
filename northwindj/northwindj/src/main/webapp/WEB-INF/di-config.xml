@@ -9,4 +9,7 @@
 		<bean id="employeesRepository" class="com.tao.northwindj.repositories.imp.EmployeesRepository"></bean>
 		<bean id="ordersRepository" class="com.tao.northwindj.repositories.imp.OrdersRepository"></bean>
 		<bean id="productsRepository" class="com.tao.northwindj.repositories.imp.ProductsRepository"></bean>
+		<bean id="purchasesRepository" class="com.tao.northwindj.repositories.imp.PurchasesRepository"></bean>
+		<bean id="shippersRepository"  class="com.tao.northwindj.repositories.imp.ShippersRepository"></bean>
+		<bean id="suppliersRepository" class="com.tao.northwindj.repositories.imp.SuppliersRepository"></bean>
 </beans>
