@@ -10,5 +10,7 @@
 				<property name="createDate" column="create_date"></property>
 				<property name="updateBy" column="update_by" length="20"></property>
 				<property name="updateDate" column="update_date"></property>
+				
+			
 		</class>
 </hibernate-mapping>

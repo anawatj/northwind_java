@@ -99,11 +99,13 @@
 												Demographic
 										</div>
 										<div class="col-xs-9">
-												<label ng-repeat="item in demographics">
-									
-  													<input type="checkbox" data-checklist-model="model.demos" data-checklist-value="item"> {{item.name}}
+												
+													<div class="checkbox" ng-repeat="item in demographics">
+															<input type="checkbox" data-checklist-model="model.demos" data-checklist-value="item"> <label >{{item.name}}</label>
+													</div>
+  													
   									
-											</label>
+												
 										</div>
 								</div>
 								<div class="row">

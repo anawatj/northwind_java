@@ -17,9 +17,9 @@
 				<property name="postalCode" column="postal_code" length="20"></property>
 				<property name="phone" column="phone" length="20"></property>
 				<property name="fax" column="fax" length="20"></property>
-				<set name="demos" cascade="all-delete-orphan" table="tbl_customers_demographics" lazy="true">
+				<set name="demos" cascade="all"  table="tbl_customers_demographics" lazy="true">
 					<key column="customer_id"></key>
-					<many-to-many class="com.tao.northwindj.domains.master.DemoGraphics" column="demographic_id" not-found="ignore" ></many-to-many>
+					<many-to-many entity-name="com.tao.northwindj.domains.master.DemoGraphics" column="demographic_id" not-found="ignore" ></many-to-many>
 				</set>
 			<property name="createBy" column="create_by" length="20"></property>
 			<property name="createDate" column="create_date"></property>
