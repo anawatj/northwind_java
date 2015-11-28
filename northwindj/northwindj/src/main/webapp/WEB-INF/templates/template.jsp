@@ -10,16 +10,17 @@
 <title>ManaoTemplate</title>
 <link rel="stylesheet"
 	href="${context}/webjars/bootstrap/3.3.5/css/bootstrap.min.css" />
-<link rel="stylesheet" href="${context}/resources/theme/css/material.min.css"/>
+<%-- <link rel="stylesheet" href="${context}/resources/theme/css/material.min.css"/> --%>
 <script type="text/javascript"
 	src="${context}/webjars/jquery/2.1.4/jquery.min.js"></script>
 <script type="text/javascript" src="${context}/webjars/bootstrap/3.3.5/js/bootstrap.min.js"></script>
-<script type="text/javascript" src="${context}/resources/theme/js/material.min.js"></script>
+<%-- <script type="text/javascript" src="${context}/resources/theme/js/material.min.js"></script> --%>
 <script type="text/javascript"
 	src="${context}/webjars/angularjs/1.4.4/angular.min.js"></script>
 <script type="text/javascript" src="${context }/resources/lib/ui-bootstrap-tpls-0.14.3.min.js"></script>
 <script type="text/javascript" src="${context }/resources/lib/checklist-model.js"></script>
 <script type="text/javascript" src="${context }/resources/app/app.js"></script>
+<script type="text/javascript" src="${context }/resources/app/services/masterService.js"></script>
 <script type="text/javascript" src="${context }/resources/app/services/categoriesService.js"></script>
 <script type="text/javascript" src="${context }/resources/app/services/customersService.js"></script>
 <script type="text/javascript" src="${context }/resources/app/services/employeesService.js"></script>
@@ -29,6 +30,7 @@
 <script type="text/javascript" src="${context }/resources/app/services/shippersService.js"></script>
 <script type="text/javascript" src="${context }/resources/app/services/suppliersService.js"></script>
 <script type="text/javascript" src="${context }/resources/app/services/territoriesService.js"></script>
+<script type="text/javascript" src="${context }/resources/app/controllers/customers/entry.js"></script>
 
 	    <style type="text/css">
             .primary
