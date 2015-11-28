@@ -30,6 +30,7 @@
 <script type="text/javascript" src="${context }/resources/app/services/shippersService.js"></script>
 <script type="text/javascript" src="${context }/resources/app/services/suppliersService.js"></script>
 <script type="text/javascript" src="${context }/resources/app/services/territoriesService.js"></script>
+<script type="text/javascript" src="${context }/resources/app/controllers/categories/entry.js"></script>
 <script type="text/javascript" src="${context }/resources/app/controllers/customers/entry.js"></script>
 
 	    <style type="text/css">

@@ -54,6 +54,7 @@ app.controller('customersEntryCtrl',function($scope,masterService,customersServi
 				  					}else
 				  					{
 				  						$scope.model={};
+				  						$scope.model.id=0;
 				  					}
 				  					deferred.resolve(data);
 				  			});
@@ -77,6 +78,13 @@ app.controller('customersEntryCtrl',function($scope,masterService,customersServi
 			};
 			$scope.clear=function()
 			{
-				$scope.model={};
+				if($scope.id==0)
+				{
+					$scope.model={};
+					$scope.model.id=0;
+				}else
+				{
+					window.location=url+"customers/entry.html?id="+$scope.id;
+				}
 			};
 		});
