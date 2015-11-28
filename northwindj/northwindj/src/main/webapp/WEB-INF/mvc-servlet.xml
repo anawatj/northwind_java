@@ -29,6 +29,10 @@
 	<mvc:view-controller path="/categories/list.html"/>
 	<mvc:view-controller path="/customers/entry.html"/>
 	<mvc:view-controller path="/customers/list.html"/>
+	<mvc:view-controller path="/employees/list.html"/>
+	<mvc:view-controller path="/employees/entry.html"/>
+	<mvc:view-controller path="/employees/tabEducation.html"/>
+	<mvc:view-controller path="/employees/tabExperiences.html"/>
 	<bean id="viewResolver"
 		class="org.springframework.web.servlet.view.InternalResourceViewResolver">
 
