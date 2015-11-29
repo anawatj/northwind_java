@@ -2,46 +2,41 @@
 <%@ taglib uri="http://tiles.apache.org/tags-tiles" prefix="tiles"%>
  <tiles:insertDefinition name="defaultTemplate">
 	<tiles:putAttribute name="body">
-		<div class="col-xs-12" >
+		<div class="col-xs-12" ng-controller="suppliersEntryCtrl" ng-init="init()">
 				<fieldset>
-						<legend>Customers Entry</legend>
+						<legend>Suppliers Entry</legend>
 						<form>
 								<div class="row">
-										<div class="col-xs-3">
-											<label>CustomerCode</label>
-										</div>
-										<div class="col-xs-3">
-											<input type="text" class="form-control" ng-model="model.customerCode"/>
-										</div>
+									
 										<div class="col-xs-3">
 											<label>CompanyName</label>
 										</div>
 										<div class="col-xs-3">
 											<input type="text" class="form-control" ng-model="model.companyName"/>
 										</div>
-								</div>
-								<div class="row">
 										<div class="col-xs-3">
 											<label>ContactName</label>
 										</div>
 										<div class="col-xs-3">
 												<input type="text" class="form-control" ng-model="model.contactName"/>
 										</div>
+								</div>
+								<div class="row">
+										
 										<div class="col-xs-3">
 											<label>ContactTitle</label>
 										</div>
 										<div class="col-xs-3">
 												<input type="text" class="form-control" ng-model="model.contactTitle"/>
 										</div>
-								</div>
-								<div class="row">
-										<div class="col-xs-3">
+											<div class="col-xs-3">
 												<label>Address</label>
 										</div>
-										<div class="col-xs-9">
+										<div class="col-xs-3">
 												<textarea class="form-control" ng-model="model.address"></textarea>
 										</div>
 								</div>
+							
 								<div class="row">
 										<div class="col-xs-3">
 												<label>Country</label>
