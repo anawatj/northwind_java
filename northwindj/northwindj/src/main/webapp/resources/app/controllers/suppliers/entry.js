@@ -57,6 +57,7 @@ app.controller('suppliersEntryCtrl',function($scope,masterService,suppliersServi
 	};
 	$scope.countryChange=function()
 	{
+	
 		masterService.getAllCity($scope.model.country.id)
 		.success(function(data)
 			{

@@ -137,6 +137,8 @@ app.controller('employeesEntryCtrl',function($scope,
 	};
 	$scope.countryChange=function()
 	{
+	
+		
 		masterService.getAllCity($scope.model.country.id)
 		.success(function(data)
 				{
