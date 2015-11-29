@@ -192,5 +192,5 @@ app.controller('employeesEntryCtrl',function($scope,
 								$scope.model.reportTo.lastName = selectedItem.lastName;
 							}
 						});
-	}
+	};
 });

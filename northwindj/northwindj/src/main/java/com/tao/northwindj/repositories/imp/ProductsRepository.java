@@ -50,6 +50,11 @@ public class ProductsRepository implements IProductsRepository {
 	}
 
 	public Products save(Products entity) {
+		if(entity.getId()==0)
+		{
+			entity.setUnitInStock(0);
+			entity.setUnitOnOrder(0);
+		}
 		Products data = findById(entity.getId());
 		Products result = (Products) factory.getCurrentSession().merge(entity);
 		return result;
