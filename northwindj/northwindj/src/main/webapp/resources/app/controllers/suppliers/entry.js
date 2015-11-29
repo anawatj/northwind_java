@@ -39,6 +39,10 @@ app.controller('suppliersEntryCtrl',function($scope,masterService,suppliersServi
 	    	 		{
 	    	 			$scope.model = data[2].data;
 	    	 			$scope.model.country = $CommonUtils.convertNullToObject($scope.model.country);
+	    	 			if($scope.model.country!={})
+	    	 			{
+	    	 				$scope.countryChange();
+	    	 			}
 	    	 			$scope.model.city = $CommonUtils.convertNullToObject($scope.model.city);
 	    	 			$scope.model.region= $CommonUtils.convertNullToObject($scope.model.region);
 	    	 			
