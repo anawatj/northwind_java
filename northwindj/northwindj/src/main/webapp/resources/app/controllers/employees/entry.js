@@ -6,7 +6,8 @@ app.controller('employeesEntryCtrl',function($scope,
 		masterService,
 		territoriesService,
 		$pageUtils,
-		$CommonUtils)
+		$CommonUtils,
+		$q)
 {
 	
 	$scope.model={};
@@ -65,15 +66,27 @@ app.controller('employeesEntryCtrl',function($scope,
 	    		 $scope.model.territories = $CommonUtils.convertNullToArray($scope.model.territories);
 	    		 $scope.model.educations = $CommonUtils.convertNullToArray($scope.model.educations);
 	    		 $scope.model.experiences = $CommonUtils.convertNullToArray($scope.model.experiences);
+	    		 $scope.model.hireDate = new Date($scope.model.hireDate);
+	    		 $scope.model.birthDate = new Date($scope.model.birthDate);
+	    		 
 	    		 for(var index=0;index<$scope.model.educations.length;index++)
 	    		 {
 	    			 var education = $scope.model.educations[index];
 	    			 education.educationLevel = $CommonUtils.convertNullToObject(education.educationLevel);
 	    		 }
+	    		 for(var index=0;index<$scope.model.experiences.length;index++)
+	    		{
+	    			 var experience = $scope.model.experiences[index];
+	    			 experience.start = new Date(experience.start);
+	    			 experience.end = new Date(experience.end);
+	    		}
 	    	 }else
 	    	 {
 	    		 $scope.model={};
 	    		 $scope.model.id=0;
+	    		 $scope.model.educations=[];
+	    		 $scope.model.territories=[];
+	    		 $scope.model.experiences=[];
 	    	 }
 	    	 deferred.resolve(data);
 	    	 
@@ -116,6 +129,15 @@ app.controller('employeesEntryCtrl',function($scope,
 				$scope.model.experiences.splice(index,1);
 			}
 		}
+	};
+	$scope.countryChange=function()
+	{
+		masterService.getAllCity($scope.model.country.id)
+		.success(function(data)
+				{
+					$scope.cities=data.list;
+				})	;
+		
 	};
 	$scope.save=function()
 	{

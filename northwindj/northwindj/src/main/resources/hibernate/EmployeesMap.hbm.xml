@@ -30,7 +30,7 @@
 						<key column="employee_id" foreign-key="fk_experiences_employees"></key>
 						<one-to-many class="com.tao.northwindj.domains.employees.Experiences" not-found="ignore"/>
 				</set>
-				<set name="territories" table="tbl_employees_territories" cascade="all-delete-orphan" lazy="true">
+				<set name="territories" table="tbl_employees_territories" cascade="all" lazy="true">
 						<key column="employee_id" foreign-key="fk_employees_employees_territories"></key>
 						<many-to-many class="com.tao.northwindj.domains.territories.Territories" column="territory_id" foreign-key="fk_territories_employee_territories" not-found="ignore">					</many-to-many>
 				</set>

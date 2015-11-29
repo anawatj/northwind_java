@@ -42,13 +42,13 @@
 						<label>BirthDate</label>
 					</div>
 					<div class="col-xs-3">
-						<input type="date" class="form-control" />
+						<input kendo-date-picker k-ng-model="model.birthDate" style="width:100%" k-format="'dd/MM/yyyy'" />
 					</div>
 					<div class="col-xs-3">
 						<label>HireDate</label>
 					</div>
 					<div class="col-xs-3">
-						<input type="date" class="form-control" />
+						<input kendo-date-picker k-ng-model="model.hireDate" style="width:100%" k-format="'dd/MM/yyyy'"/>
 					</div>
 				</div>
 				<div class="row">
@@ -56,7 +56,7 @@
 						<label>Address</label>
 					</div>
 					<div class="col-xs-9">
-						<textarea class="form-control"></textarea>
+						<textarea class="form-control" ng-model="model.address"></textarea>
 					</div>
 				</div>
 				<div class="row">
@@ -64,13 +64,21 @@
 						<label>Country</label>
 					</div>
 					<div class="col-xs-3">
-						<select class="form-control"></select>
+						<select class="form-control" ng-model="model.country.id" ng-change="countryChange()">
+								<option value="0"></option>
+								<option ng-repeat="item in countries" ng-selected="item.id==model.country.id" value="{{item.id}}">
+								{{item.name}}
+								</option>
+						</select>
 					</div>
 					<div class="col-xs-3">
 						<label>City</label>
 					</div>
 					<div class="col-xs-3">
-						<select class="form-control"></select>
+						<select class="form-control" ng-model="model.city.id">
+								<option value="0"></option>
+								<option ng-repeat="item in cities" ng-selected="item.id==model.city.id" value="{{item.id}}">{{item.name}}</option>
+						</select>
 					</div>
 				</div>
 				<div class="row">
@@ -78,13 +86,16 @@
 						<label>Region</label>
 					</div>
 					<div class="col-xs-3">
-						<select class="form-control"></select>
+						<select class="form-control" ng-model="model.region.id">
+								<option value="0"></option>
+								<option ng-repeat="item in regions" ng-selected="item.id==model.region.id" value="{{item.id}}">{{item.name}}</option>
+						</select>
 					</div>
 					<div class="col-xs-3">
 						<label>PostalCode</label>
 					</div>
 					<div class="col-xs-3">
-						<input type="text" class="form-control" />
+						<input type="text" class="form-control" ng-model="model.postalCode" />
 					</div>
 				</div>
 				<div class="row">
@@ -92,13 +103,13 @@
 						<label>Phone</label>
 					</div>
 					<div class="col-xs-3">
-						<input type="tel" class="form-control" />
+						<input type="tel" class="form-control"  ng-model="model.homePhone"/>
 					</div>
 					<div class="col-xs-3">
 						<label>Extension</label>
 					</div>
 					<div class="col-xs-3">
-						<input type="text" class="form-control" />
+						<input type="text" class="form-control" ng-model="model.extention" />
 					</div>
 				</div>
 				<div class="row">
@@ -106,7 +117,7 @@
 						<label>Notes</label>
 					</div>
 					<div class="col-xs-9">
-						<textarea class="form-control"></textarea>
+						<textarea class="form-control" ng-model="model.notes"></textarea>
 					</div>
 				</div>
 				<div class="row">
@@ -114,7 +125,10 @@
 						<label>Department</label>
 					</div>
 					<div class="col-xs-3">
-						<select class="form-control"></select>
+						<select class="form-control" ng-model="model.department.id">
+							<option value="0"></option>
+							<option ng-repeat="item in departments" ng-selected="item.id==model.department.id" value="{{item.id}}">{{item.name}}</option>
+						</select>
 					</div>
 					<div class="col-xs-3">
 						<label>ReportTo</label>
@@ -135,7 +149,12 @@
 					<div class="col-xs-3">
 						<label>Territories</label>
 					</div>
-					<div class="col-xs-9"></div>
+					<div class="col-xs-9">
+								<div class="checkbox" ng-repeat="item in territories">
+															<input type="checkbox" data-checklist-model="model.territories" data-checklist-value="item"> <label >{{item.name}}</label>
+								</div>
+  													
+					</div>
 				</div>
 				<div class="row">
 					<div class="col-xs-12">
@@ -157,8 +176,8 @@
 				</div>
 				<div class="row">
 					<div class="col-xs-12">
-						<button class="btn btn-primary">Save</button>
-						<button class="btn btn-primary">Clear</button>
+						<button class="btn btn-primary" ng-click="save()">Save</button>
+						<button class="btn btn-primary" ng-click="clear()">Clear</button>
 					</div>
 				</div>
 			</form>

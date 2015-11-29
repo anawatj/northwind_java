@@ -59,7 +59,7 @@ public class EmployeesRepository implements IEmployeesRepository {
 
 	public Employees save(Employees entity) {
 			Employees data = findById(entity.getId());
-			Employees result = (Employees) factory.getCurrentSession().merge(data);
+			Employees result = (Employees) factory.getCurrentSession().merge(entity);
 			return result;
 	}
 

@@ -10,25 +10,38 @@
 								</tr>
 						</thead>
 						<tbody>
-								<tr>
+								<tr ng-repeat="item in model.educations">
 										<td>
-												<input type="checkbox"/>
+												<input type="checkbox" ng-model="item.selected"/>
 										</td>
 										<td>
-												<select class="form-control"></select>
+												<select class="form-control" ng-model="item.educationLevel.id">
+														<option value="0"></option>
+														<option ng-repeat="sitem in educationLevels" ng-selected="sitem.id==item.educationLevel.id" value="{{sitem.id}}">
+															{{sitem.name}}
+														</option>
+												</select>
 										</td>
 										<td>
-												<input type="text" class="form-control"/>
+												<input type="text" class="form-control" ng-model="item.university"/>
 										</td>
 										<td>
-												<input type="text" class="form-control"/>
+												<input type="text" class="form-control" ng-model="item.major"/>
 										</td>
 										<td>
-												<input type="text" class="form-control"/>
+												<input type="text" class="form-control" ng-model="item.minor"/>
 										</td>
 										<td>
-												<input type="number" class="form-control"/>
+												<input kendo-numeric-text-box k-ng-model="item.gpa"/>
 										</td>
 								</tr>
 						</tbody>
+						<tfoot>
+								<tr>
+										<td colspan="6">
+												<button class="btn btn-primary" ng-click="addEducation()">Add</button>
+												<button class="btn btn-primary" ng-click="delEducation()">Del</button>
+										</td>
+								</tr>
+						</tfoot>
 </table>
