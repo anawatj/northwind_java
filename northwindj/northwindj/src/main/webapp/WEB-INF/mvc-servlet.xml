@@ -34,6 +34,9 @@
 	<mvc:view-controller path="/employees/tabEducation.html"/>
 	<mvc:view-controller path="/employees/tabExperiences.html"/>
 	<mvc:view-controller path="/employees/searchModal.html"/>
+	<mvc:view-controller path="/products/entry.html"/>
+	<mvc:view-controller path="/products/list.html"/>
+	<mvc:view-controller path="/products/searchModal.html"/>
 	<mvc:view-controller path="/suppliers/entry.html"/>
 	<mvc:view-controller path="/suppliers/list.html"/>
 	<mvc:view-controller path="/suppliers/searchModal.html"/>

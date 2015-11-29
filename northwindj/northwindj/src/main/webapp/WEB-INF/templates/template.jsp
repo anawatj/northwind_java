@@ -56,6 +56,9 @@
 	src="${context }/resources/app/controllers/customers/entry.js"></script>
 <script type="text/javascript" src="${context }/resources/app/controllers/employees/entry.js"></script>
 <script type="text/javascript" src="${context }/resources/app/controllers/employees/searchModal.js"></script>
+<script type="text/javascript" src="${context }/resources/app/controllers/products/entry.js"></script>
+<script type="text/javascript" src="${context }/resources/app/controllers/products/list.js"></script>
+<script type="text/javascript" src="${context }/resources/app/controllers/products/searchModal.js"></script>
 <script type="text/javascript" src="${context }/resources/app/controllers/suppliers/entry.js"></script>
 <script type="text/javascript" src="${context }/resources/app/controllers/suppliers/list.js"></script>
 <script type="text/javascript" src="${context }/resources/app/controllers/suppliers/searchModal.js"></script>
