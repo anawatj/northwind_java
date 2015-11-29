@@ -15,6 +15,13 @@ public class Education extends AbstractDomain<Long> {
 	private String major;
 	private String minor;
 	private Double gpa;
+	private boolean selected;
+	public boolean getSelected() {
+		return selected;
+	}
+	public void setSelected(boolean selected) {
+		this.selected = selected;
+	}
 	public Long getEmployeeId() {
 		return employeeId;
 	}

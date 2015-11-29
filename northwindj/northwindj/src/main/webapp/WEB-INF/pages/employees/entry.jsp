@@ -2,20 +2,23 @@
 <%@ taglib uri="http://tiles.apache.org/tags-tiles" prefix="tiles"%>
 <tiles:insertDefinition name="defaultTemplate">
 	<tiles:putAttribute name="body">
-		<div class="col-xs-12">
+		<div class="col-xs-12" ng-controller="employeesEntryCtrl" ng-init="init()">
 			<form>
 				<div class="row">
 					<div class="col-xs-3">
 						<label>Title</label>
 					</div>
 					<div class="col-xs-3">
-						<select class="form-control"></select>
+						<select class="form-control" ng-model="model.title.id">
+								<option value="0"></option>
+								<option ng-repeat="item in titles" value="{{item.id}}" ng-selected="item.id==model.title.id">{{item.name}}</option>
+						</select>
 					</div>
 					<div class="col-xs-3">
 						<label>TitleOfCourtesy</label>
 					</div>
 					<div class="col-xs-3">
-						<input type="text" class="form-control" />
+						<input type="text" class="form-control" ng-model="model.titleOfCourstesy"/>
 					</div>
 
 				</div>
@@ -24,13 +27,13 @@
 						<label>FirstName</label>
 					</div>
 					<div class="col-xs-3">
-						<input type="text" class="form-control" />
+						<input type="text" class="form-control" ng-model="model.firstName" />
 					</div>
 					<div class="col-xs-3">
 						<label>LastName</label>
 					</div>
 					<div class="col-xs-3">
-						<input type="text" class="form-control" />
+						<input type="text" class="form-control" ng-model="model.lastName" />
 					</div>
 
 				</div>

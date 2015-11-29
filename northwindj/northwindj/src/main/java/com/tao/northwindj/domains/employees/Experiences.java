@@ -16,6 +16,14 @@ public class Experiences extends AbstractDomain<Long> {
 	private Double salary;
 	private String reasonOfResign;
 	
+	private boolean selected;
+	
+	public boolean getSelected() {
+		return selected;
+	}
+	public void setSelected(boolean selected) {
+		this.selected = selected;
+	}
 	public Long getEmployeeId() {
 		return employeeId;
 	}
