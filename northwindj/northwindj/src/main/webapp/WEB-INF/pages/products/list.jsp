@@ -17,7 +17,7 @@
 										<label>Categories</label>
 								</div>
 								<div class="col-xs-9">
-										<select class="form-control"/>
+										<select class="form-control"></select>
 								</div>
 						</div>
 						<div class="row">
