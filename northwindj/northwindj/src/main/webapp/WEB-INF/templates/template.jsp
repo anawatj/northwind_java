@@ -55,6 +55,7 @@
 <script type="text/javascript"
 	src="${context }/resources/app/controllers/customers/entry.js"></script>
 <script type="text/javascript" src="${context }/resources/app/controllers/employees/entry.js"></script>
+<script type="text/javascript" src="${context }/resources/app/controllers/employees/searchModal.js"></script>
 <script type="text/javascript" src="${context }/resources/app/controllers/territories/entry.js"></script>
 
 <style type="text/css">

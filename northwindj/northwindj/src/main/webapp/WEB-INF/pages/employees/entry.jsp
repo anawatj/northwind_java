@@ -136,8 +136,8 @@
 					<div class="col-xs-3">
 						<div class="input-group">
 							<div class="input-group-btn">
-								<input type="text" class="form-control" />
-								<button class="btn btn-primary">
+								<input type="text" class="form-control" ng-model="model.reportTo.id" />
+								<button class="btn btn-primary" ng-click="findReportTo()">
 									<i class="glyphicon glyphicon-search"></i>
 								</button>
 								<label></label>

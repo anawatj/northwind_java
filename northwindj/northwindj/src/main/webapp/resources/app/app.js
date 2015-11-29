@@ -39,3 +39,7 @@ app.factory('$CommonUtils', function() {
 	};
 	return factory;
 });
+app.constant('config', {
+	paginationSize : 5,
+	pageSize : 10
+});

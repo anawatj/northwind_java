@@ -33,6 +33,7 @@
 	<mvc:view-controller path="/employees/entry.html"/>
 	<mvc:view-controller path="/employees/tabEducation.html"/>
 	<mvc:view-controller path="/employees/tabExperiences.html"/>
+	<mvc:view-controller path="/employees/searchModal.html"/>
 	<mvc:view-controller path="/territories/entry.html"/>
 	<mvc:view-controller path="/territories/list.html"/>
 	<bean id="viewResolver"

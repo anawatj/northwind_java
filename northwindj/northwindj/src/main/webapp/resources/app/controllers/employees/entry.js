@@ -7,7 +7,8 @@ app.controller('employeesEntryCtrl',function($scope,
 		territoriesService,
 		$pageUtils,
 		$CommonUtils,
-		$q)
+		$q,
+		$modal)
 {
 	
 	$scope.model={};
@@ -61,6 +62,10 @@ app.controller('employeesEntryCtrl',function($scope,
 	    		 $scope.model.city= $CommonUtils.convertNullToObject($scope.model.city);
 	    		 $scope.model.region= $CommonUtils.convertNullToObject($scope.model.region);
 	    		 $scope.model.country = $CommonUtils.convertNullToObject($scope.model.country);
+	    		 if($scope.model.country!={})
+	    		 {
+	    			 $scope.countryChange();
+	    		 }
 	    		 $scope.model.reportTo = $CommonUtils.convertNullToObject($scope.model.reportTo);
 	    		 $scope.model.department = $CommonUtils.convertNullToObject($scope.model.department);
 	    		 $scope.model.territories = $CommonUtils.convertNullToArray($scope.model.territories);
@@ -158,4 +163,32 @@ app.controller('employeesEntryCtrl',function($scope,
 			window.location= url+"employees/entry.html?id="+$scope.id;
 		}
 	};
+	$scope.findReportTo=function()
+	{
+		var modalInstance = $modal.open({
+			templateUrl : url
+					+ 'employees/searchModal.html',
+			controller : 'employeeSearchModalCtrl',
+			size : 'lg',
+			backdrop : false,
+			animation : true,
+			resolve : {
+				parameter : function() {
+		
+				}
+			}
+		});
+
+		modalInstance.result
+				.then(
+						function(selectedItem) {
+							if(selectedItem!=undefined)
+							{
+								$scope.model.reportTo={};
+								$scope.model.reportTo.id = selectedItem.id;
+								$scope.model.reportTo.firstName = selectedItem.firstName;
+								$scope.model.reportTo.lastName = selectedItem.lastName;
+							}
+						});
+	}
 });
