@@ -24,8 +24,8 @@
 <%-- <script type="text/javascript" src="${context}/resources/theme/js/material.min.js"></script> --%>
 <script type="text/javascript"
 	src="${context}/webjars/angularjs/1.4.4/angular.min.js"></script>
-<script type="text/javascript" src="${context }/resources/kendo/script/kendo.all.min.js"></script>
-<script type="text/javascript" src="${context }/resources/kendo/script/angular-kendo.min.js"></script>
+<script type="text/javascript" src="${context }/resources/kendo/script/kendo.ui.core.min.js"></script>
+<script type="text/javascript" src="${context }/resources/kendo/script/kendo.angular.min.js"></script>
 <script type="text/javascript"
 	src="${context }/resources/lib/ui-bootstrap-tpls-0.14.3.min.js"></script>
 <script type="text/javascript"
