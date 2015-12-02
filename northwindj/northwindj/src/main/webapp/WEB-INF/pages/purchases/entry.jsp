@@ -129,8 +129,8 @@
 					</div>
 					<div class="row">
 							<div class="col-xs-12">
-									<button class="btn btn-primary">Save</button>
-									<button class="btn btn-primary">Clear</button>
+									<button class="btn btn-primary" ng-click="save()">Save</button>
+									<button class="btn btn-primary" ng-click="clear()">Clear</button>
 							</div>
 					</div>
 

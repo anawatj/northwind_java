@@ -101,15 +101,86 @@ app.controller('ordersEntryCtrl',function($scope,masterService,ordersService,shi
 			};
 			$scope.findEmployee=function()
 			{
+				var modalInstance = $modal.open({
+					templateUrl : url
+							+ 'employees/searchModal.html',
+					controller : 'employeeSearchModalCtrl',
+					size : 'lg',
+					backdrop : false,
+					animation : true,
+					resolve : {
+						parameter : function() {
 				
+						}
+					}
+				});
+
+				modalInstance.result
+						.then(
+								function(selectedItem) {
+									if(selectedItem!=undefined)
+									{
+										$scope.model.employee={};
+										$scope.model.employee.id = selectedItem.id;
+										$scope.model.employee.firstName = selectedItem.firstName;
+										$scope.model.employee.lastName = selectedItem.lastName;
+									}
+								});
 			};
 			$scope.findCustomer=function()
 			{
+				var modalInstance = $modal.open({
+					templateUrl : url
+							+ 'customers/searchModal.html',
+					controller : 'customersSearchModalCtrl',
+					size : 'lg',
+					backdrop : false,
+					animation : true,
+					resolve : {
+						parameter : function() {
 				
+						}
+					}
+				});
+
+				modalInstance.result
+						.then(
+								function(selectedItem) {
+									if(selectedItem!=undefined)
+									{
+										$scope.model.customer={};
+										$scope.model.customer.id = selectedItem.id;
+										$scope.model.customer.customerCode = selectedItem.customerCode;
+										$scope.model.customer.companyName = selectedItem.companyName;
+									}
+								});
 			};
-			$scope.findProduct=function(index)
+			$scope.findProduct=function(item)
 			{
+				var modalInstance = $modal.open({
+					templateUrl : url
+							+ 'products/searchModal.html',
+					controller : 'productsSearchModalCtrl',
+					size : 'lg',
+					backdrop : false,
+					animation : true,
+					resolve : {
+						parameter : function() {
 				
+						}
+					}
+				});
+
+				modalInstance.result
+						.then(
+								function(selectedItem) {
+									if(selectedItem!=undefined)
+									{
+										item.product={};
+										item.product.id = selectedItem.id;
+										item.product.productName = selectedItem.productName;
+									}
+								});
 			};
 			$scope.save=function()
 			{
