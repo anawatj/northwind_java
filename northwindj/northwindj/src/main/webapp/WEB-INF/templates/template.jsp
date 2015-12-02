@@ -12,8 +12,8 @@
 	href="${context}/webjars/bootstrap/3.3.5/css/bootstrap.min.css" />
 	
 <link rel="stylesheet" href="${context }/resources/css/side-menu.css" />
-<link href="http://kendo.cdn.telerik.com/2014.2.716/styles/kendo.common-bootstrap.min.css" rel="stylesheet" />
-<link href="http://kendo.cdn.telerik.com/2014.2.716/styles/kendo.bootstrap.min.css" rel="stylesheet" />
+<link rel= "stylesheet" href="${context }/resources/kendo/style/kendo.common-bootstrap.min.css"/>
+<link rel="stylesheet" href="${context }/resources/kendo/style/kendo.bootstrap.min.css"/>
 
 
 <%-- <link rel="stylesheet" href="${context}/resources/theme/css/material.min.css"/> --%>
@@ -24,7 +24,8 @@
 <%-- <script type="text/javascript" src="${context}/resources/theme/js/material.min.js"></script> --%>
 <script type="text/javascript"
 	src="${context}/webjars/angularjs/1.4.4/angular.min.js"></script>
-<script src="http://kendo.cdn.telerik.com/2014.2.716/js/kendo.ui.core.min.js"></script>
+<script type="text/javascript" src="${context }/resources/kendo/script/kendo.all.min.js"></script>
+<script type="text/javascript" src="${context }/resources/kendo/script/angular-kendo.min.js"></script>
 <script type="text/javascript"
 	src="${context }/resources/lib/ui-bootstrap-tpls-0.14.3.min.js"></script>
 <script type="text/javascript"

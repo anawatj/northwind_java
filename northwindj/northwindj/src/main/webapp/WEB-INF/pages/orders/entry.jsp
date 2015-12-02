@@ -2,7 +2,7 @@
 <%@ taglib uri="http://tiles.apache.org/tags-tiles" prefix="tiles"%>
 <tiles:insertDefinition name="defaultTemplate">
 	<tiles:putAttribute name="body">
-			<div class="col-xs-12">
+			<div class="col-xs-12" ng-controller="ordersEntryCtrl" ng-init="init()">
 					<fieldset>
 							<legend>Orders Entry</legend>
 							<form>
@@ -74,7 +74,7 @@
 											<div class="col-xs-3">
 													<input kendo-numeric-text-box k-ng-model="model.freight"/>
 											</div>
-											<div calss="col-xs-3">
+											<div class="col-xs-3">
 													<label>ShipName</label>
 											</div>
 											<div class="col-xs-3">
