@@ -1,7 +1,7 @@
 /**
  * 
  */
-app.controller('productsSearchModalCtrl',function($scope,categoriesService,$q,config,$modalInstance,$modal)
+app.controller('productsSearchModalCtrl',function($scope,productsService,categoriesService,$q,config,$modalInstance,$modal)
 		{
 			$scope.model={};
 			$scope.pageSize = config.pageSize;
