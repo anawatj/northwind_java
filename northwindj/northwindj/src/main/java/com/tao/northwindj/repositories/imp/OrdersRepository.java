@@ -65,6 +65,7 @@ public class OrdersRepository implements IOrdersRepository{
 
 	public Result<Orders> findByQuery(OrdersQuery query) {
 		Criteria criteria = factory.getCurrentSession().createCriteria(Orders.class);
+		
 		if(query.getCustomer()!=null && query.getCustomer()!=0)
 		{
 			criteria.createAlias("customer", "cus",JoinType.LEFT_OUTER_JOIN);
@@ -91,6 +92,9 @@ public class OrdersRepository implements IOrdersRepository{
 		{
 			criteria.add(Restrictions.le("requireDate", query.getRequireDateEnd()));
 		}
+		criteria.setFetchMode("employee", FetchMode.JOIN);
+		criteria.setFetchMode("employee.title",FetchMode.JOIN);
+		criteria.setFetchMode("customer", FetchMode.JOIN);
 		return new Result<Orders>(criteria);
 	}
 
