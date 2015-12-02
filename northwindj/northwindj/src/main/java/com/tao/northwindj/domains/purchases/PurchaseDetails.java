@@ -13,6 +13,13 @@ public class PurchaseDetails extends AbstractDomain<Long> {
 	private Integer quantity;
 	private Double unitPrice;
 	private Double discount;
+	private boolean selected;
+	public boolean getSelected() {
+		return selected;
+	}
+	public void setSelected(boolean selected) {
+		this.selected = selected;
+	}
 	public Long getPurchaseId() {
 		return purchaseId;
 	}

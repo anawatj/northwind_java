@@ -59,6 +59,10 @@ app.controller('purchasesEntryCtrl',function($scope,masterService,purchasesServi
 				$scope.addDetail=function()
 				{
 					var detail = {};
+					if($scope.id!=0)
+					{
+						detail.purchaseId=$scope.id;
+					}
 					detail.selected=false;
 					detail.id=0;
 					$scope.model.details.push(detail);

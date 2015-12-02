@@ -67,6 +67,7 @@ app.controller('ordersEntryCtrl',function($scope,masterService,ordersService,shi
 					 	{
 					 		$scope.model={};
 					 		$scope.model.id=0;
+					 		$scope.model.details=[];
 					 	}
 					 	deferred.resolve(data);
 				   });
@@ -83,6 +84,10 @@ app.controller('ordersEntryCtrl',function($scope,masterService,ordersService,shi
 			$scope.addDetail=function()
 			{
 				var detail = {};
+				if($scope.id!=0)
+				{
+					detail.orderId=$scope.id;
+				}
 				detail.id=0;
 				detail.selected=false;
 				$scope.model.details.push(detail);

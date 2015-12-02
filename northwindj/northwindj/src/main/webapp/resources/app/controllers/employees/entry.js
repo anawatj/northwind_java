@@ -103,6 +103,10 @@ app.controller('employeesEntryCtrl',function($scope,
 		var education = {};
 		education.selected=false;
 		education.id=0;
+		if($scope.id!=0)
+		{
+			education.employeeId=$scope.id;
+		}
 		$scope.model.educations.push(education);
 	};
 	$scope.delEducation=function()
@@ -120,6 +124,10 @@ app.controller('employeesEntryCtrl',function($scope,
 	$scope.addExperience=function()
 	{
 		var experience = {};
+		if($scope.id!=0)
+		{
+			experience.employeeId=$scope.id;
+		}
 		experience.selected=false;
 		experience.id=0;
 		$scope.model.experiences.push(experience);
