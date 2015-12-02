@@ -2,7 +2,7 @@
 <%@ taglib uri="http://tiles.apache.org/tags-tiles" prefix="tiles"%>
 <tiles:insertDefinition name="defaultTemplate">
 	<tiles:putAttribute name="body">
-		<div class="col-xs-12">
+		<div class="col-xs-12" ng-controller="categoriesListCtrl" ng-init="init()">
 			<fieldset>
 				<legend>Categories List</legend>
 				<form>
@@ -11,21 +11,21 @@
 							<label>CategoryName</label>
 						</div>
 						<div class="col-xs-6">
-							<input type="text" class="form-control" />
+							<input type="text" class="form-control" ng-model="model.categoryName" />
 						</div>
 					</div>
-					<div class="row">
+					<!--  <div class="row">
 						<div class="col-xs-3">
 							<label>Description</label>
 						</div>
 						<div class="col-xs-6">
 							<textarea class="form-control"></textarea>
 						</div>
-					</div>
+					</div>-->
 					<div class="row">
 						<div class="col-xs-9">
-							<button class="btn btn-primary">Search</button>
-							<button class="btn btn-primary">Clear</button>
+							<button class="btn btn-primary" ng-click="search()">Search</button>
+							<button class="btn btn-primary" ng-click="clear()">Clear</button>
 						</div>
 					</div>
 				</form>
@@ -43,8 +43,30 @@
 								<th>Description</th>
 							</tr>
 						</thead>
-						<tbody></tbody>
+						<tbody>
+								<tr ng-repeat="item in results">
+										<td>
+												<button class="btn btn-primary" ng-click="edit(item)"><i class="glyphicon glyphicon-pencil"></i></button>
+										</td>
+										<td>
+												<button class="btn btn-primary" ng-click="remove(item)"><i class="glyphicon glyphicon-trash"></i></button>
+										</td>
+										<td>
+											{{item.id}}
+										</td>
+										<td>
+											{{item.categoryName}}
+										</td>
+										<td>
+											{{item.description}}
+										</td>
+										
+								</tr>
+						</tbody>
+
 					</table>
+												<pagination ng-model="model.page" ng-change="search()" total-items="totalItems" num-pages="numPages"
+						items-per-page="pageSize" max-size="maxSize" class="pagination-xs" boundary-links="true" rotate="false"></pagination>
 				</div>
 			</div>
 		</div>
