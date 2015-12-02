@@ -59,6 +59,7 @@
 <script type="text/javascript" src="${context }/resources/app/controllers/customers/list.js"></script>
 <script type="text/javascript" src="${context }/resources/app/controllers/customers/searchModal.js"></script>
 <script type="text/javascript" src="${context }/resources/app/controllers/employees/entry.js"></script>
+<script type="text/javascript" src="${context }/resources/app/controllers/employees/list.js"></script>
 <script type="text/javascript" src="${context }/resources/app/controllers/employees/searchModal.js"></script>
 <script type="text/javascript" src="${context }/resources/app/controllers/products/entry.js"></script>
 <script type="text/javascript" src="${context }/resources/app/controllers/products/list.js"></script>
