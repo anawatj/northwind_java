@@ -9,8 +9,8 @@ public class ProductsQuery extends AbstractQuery{
 		
 	}
 	private String productName;
-	private Integer supplier;
-	private Integer category;
+	private Long supplier;
+	private Long category;
 	private boolean discontinued;
 	private boolean hasInStock;
 	public String getProductName() {
@@ -19,16 +19,16 @@ public class ProductsQuery extends AbstractQuery{
 	public void setProductName(String productName) {
 		this.productName = productName;
 	}
-	public Integer getSupplier() {
+	public Long getSupplier() {
 		return supplier;
 	}
-	public void setSupplier(Integer supplier) {
+	public void setSupplier(Long supplier) {
 		this.supplier = supplier;
 	}
-	public Integer getCategory() {
+	public Long getCategory() {
 		return category;
 	}
-	public void setCategory(Integer category) {
+	public void setCategory(Long category) {
 		this.category = category;
 	}
 	public boolean getDiscontinued() {

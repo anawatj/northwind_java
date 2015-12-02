@@ -5,6 +5,7 @@ import java.util.List;
 
 import org.hibernate.Criteria;
 import org.hibernate.criterion.Projections;
+import org.hibernate.transform.Transformers;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonInclude.Include;
@@ -45,7 +46,9 @@ public class Page<E> {
 		this.totalRecord= (Long) criteria.setProjection(Projections.count("id")).uniqueResult();
 		criteria.setProjection(null);
 		int startPage = (page-1)*Configs.PAGE_SIZE;
-		this.list = criteria.setFirstResult(startPage).setMaxResults(Configs.PAGE_SIZE).list();
+		this.list = criteria.setFirstResult(startPage).setMaxResults(Configs.PAGE_SIZE)
+				 .setResultTransformer(Criteria.ROOT_ENTITY)
+				.list();
 		this.totalPage= this.totalRecord/Configs.PAGE_SIZE;
 		if((this.totalRecord%Configs.PAGE_SIZE)>0)
 		{

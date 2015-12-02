@@ -40,7 +40,9 @@ public class Result<E> {
 	@JsonIgnore
 	public Result<E> getFullResult()
 	{
-		this.list = this.criteria.list();
+		this.list = this.criteria
+				.setResultTransformer(Criteria.ROOT_ENTITY)
+				.list();
 		return new Result<E>(this.list);
 	}
 	@JsonIgnore
