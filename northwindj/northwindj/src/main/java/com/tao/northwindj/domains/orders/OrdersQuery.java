@@ -10,23 +10,23 @@ public class OrdersQuery extends AbstractQuery {
 	{
 		
 	}
-	private Integer customer;
-	private Integer employee;
+	private Long customer;
+	private Long employee;
 	private Date orderDateStart;
 	private Date orderDateEnd;
 	private Date requireDateStart;
 	private Date requireDateEnd;
 	
-	public Integer getCustomer() {
+	public Long getCustomer() {
 		return customer;
 	}
-	public void setCustomer(Integer customer) {
+	public void setCustomer(Long customer) {
 		this.customer = customer;
 	}
-	public Integer getEmployee() {
+	public Long getEmployee() {
 		return employee;
 	}
-	public void setEmployee(Integer employee) {
+	public void setEmployee(Long employee) {
 		this.employee = employee;
 	}
 	public Date getOrderDateStart() {

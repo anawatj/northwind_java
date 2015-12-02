@@ -11,9 +11,9 @@ public class SuppliersQuery extends AbstractQuery {
 	private String companyName;
 	private String contactName;
 	private String contactTitle;
-	private Integer city;
-	private Integer region;
-	private Integer country;
+	private Long city;
+	private Long region;
+	private Long country;
 	public String getCompanyName() {
 		return companyName;
 	}
@@ -32,22 +32,22 @@ public class SuppliersQuery extends AbstractQuery {
 	public void setContactTitle(String contactTitle) {
 		this.contactTitle = contactTitle;
 	}
-	public Integer getCity() {
+	public Long getCity() {
 		return city;
 	}
-	public void setCity(Integer city) {
+	public void setCity(Long city) {
 		this.city = city;
 	}
-	public Integer getRegion() {
+	public Long getRegion() {
 		return region;
 	}
-	public void setRegion(Integer region) {
+	public void setRegion(Long region) {
 		this.region = region;
 	}
-	public Integer getCountry() {
+	public Long getCountry() {
 		return country;
 	}
-	public void setCountry(Integer country) {
+	public void setCountry(Long country) {
 		this.country = country;
 	}
 }

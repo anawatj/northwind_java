@@ -10,7 +10,7 @@ public class EmployeesQuery extends AbstractQuery {
 	}
 	private String firstName;
 	private String lastName;
-	private Integer department;
+	private Long department;
 	public String getFirstName() {
 		return firstName;
 	}
@@ -23,10 +23,10 @@ public class EmployeesQuery extends AbstractQuery {
 	public void setLastName(String lastName) {
 		this.lastName = lastName;
 	}
-	public Integer getDepartment() {
+	public Long getDepartment() {
 		return department;
 	}
-	public void setDepartment(Integer department) {
+	public void setDepartment(Long department) {
 		this.department = department;
 	}
 	

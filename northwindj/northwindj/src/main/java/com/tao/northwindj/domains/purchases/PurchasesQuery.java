@@ -10,19 +10,19 @@ public class PurchasesQuery extends AbstractQuery{
 	{
 		
 	}
-	private Integer supplier;
-	private Integer employee;
+	private Long supplier;
+	private Long employee;
 	private Date purchaseDateStart;
-	public Integer getSupplier() {
+	public Long getSupplier() {
 		return supplier;
 	}
-	public void setSupplier(Integer supplier) {
+	public void setSupplier(Long supplier) {
 		this.supplier = supplier;
 	}
-	public Integer getEmployee() {
+	public Long getEmployee() {
 		return employee;
 	}
-	public void setEmployee(Integer employee) {
+	public void setEmployee(Long employee) {
 		this.employee = employee;
 	}
 	public Date getPurchaseDateStart() {

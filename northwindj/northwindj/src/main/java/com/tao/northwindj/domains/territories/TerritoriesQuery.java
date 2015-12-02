@@ -10,17 +10,17 @@ public class TerritoriesQuery extends AbstractQuery {
 		
 	}
 	private String name;
-	private Integer region;
+	private Long region;
 	public String getName() {
 		return name;
 	}
 	public void setName(String name) {
 		this.name = name;
 	}
-	public Integer getRegion() {
+	public Long getRegion() {
 		return region;
 	}
-	public void setRegion(Integer region) {
+	public void setRegion(Long region) {
 		this.region = region;
 	}
 }
