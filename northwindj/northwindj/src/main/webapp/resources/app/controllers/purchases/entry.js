@@ -48,6 +48,7 @@ app.controller('purchasesEntryCtrl',function($scope,masterService,purchasesServi
 						{
 							$scope.model={};
 							$scope.model.id=0;
+							$scope.model.details=[];
 						}
 						deferred.resolve(data);
 						
@@ -76,15 +77,85 @@ app.controller('purchasesEntryCtrl',function($scope,masterService,purchasesServi
 				};
 				$scope.findSupplier=function()
 				{
+					var modalInstance = $modal.open({
+						templateUrl : url
+								+ 'suppliers/searchModal.html',
+						controller : 'suppliersSearchModalCtrl',
+						size : 'lg',
+						backdrop : false,
+						animation : true,
+						resolve : {
+							parameter : function() {
 					
+							}
+						}
+					});
+
+					modalInstance.result
+							.then(
+									function(selectedItem) {
+										if(selectedItem!=undefined)
+										{
+											$scope.model.supplier={};
+											$scope.model.supplier.id = selectedItem.id;
+											$scope.model.supplier.companyName = selectedItem.companyName;
+										}
+									});
 				};
 				$scope.findEmployee=function()
 				{
+					var modalInstance = $modal.open({
+						templateUrl : url
+								+ 'employees/searchModal.html',
+						controller : 'employeeSearchModalCtrl',
+						size : 'lg',
+						backdrop : false,
+						animation : true,
+						resolve : {
+							parameter : function() {
 					
+							}
+						}
+					});
+
+					modalInstance.result
+							.then(
+									function(selectedItem) {
+										if(selectedItem!=undefined)
+										{
+											$scope.model.employee={};
+											$scope.model.employee.id = selectedItem.id;
+											$scope.model.employee.firstName = selectedItem.firstName;
+											$scope.model.employee.lastName = selectedItem.lastName;
+										}
+									});
 				};
-				$scope.findProduct=function(index)
+				$scope.findProduct=function(item)
 				{
+					var modalInstance = $modal.open({
+						templateUrl : url
+								+ 'products/searchModal.html',
+						controller : 'productsSearchModalCtrl',
+						size : 'lg',
+						backdrop : false,
+						animation : true,
+						resolve : {
+							parameter : function() {
 					
+							}
+						}
+					});
+
+					modalInstance.result
+							.then(
+									function(selectedItem) {
+										if(selectedItem!=undefined)
+										{
+											item.product={};
+											item.product.id = selectedItem.id;
+											item.product.productName = selectedItem.productName;
+										}
+									});
 				};
 				$scope.save=function()
 				{

@@ -49,6 +49,7 @@
 									<thead class="primary">
 										<tr>
 												<th></th>
+												<th></th>
 												<th>Name</th>
 												<th>Categories</th>
 												<th>Suppliers</th>

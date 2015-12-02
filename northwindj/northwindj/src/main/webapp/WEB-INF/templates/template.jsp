@@ -65,6 +65,10 @@
 <script type="text/javascript" src="${context }/resources/app/controllers/suppliers/list.js"></script>
 <script type="text/javascript" src="${context }/resources/app/controllers/suppliers/searchModal.js"></script>
 <script type="text/javascript" src="${context }/resources/app/controllers/territories/entry.js"></script>
+<script type="text/javascript" src="${context }/resources/app/controllers/orders/entry.js"></script>
+<script type="text/javascript" src="${context }/resources/app/controllers/orders/list.js"></script>
+<script type="text/javascript" src="${context }/resources/app/controllers/purchases/entry.js"></script>
+<script type="text/javascript" src="${context }/resources/app/controllers/purchases/list.js"></script>
 
 <style type="text/css">
 .primary {
