@@ -90,6 +90,13 @@
 							</div>
 						</div>
 					</div>
+				
+					<div class="row">
+							<div class="col-xs-12">
+									<button class="btn btn-primary">Save</button>
+									<button class='btn btn-primary'>Clear</button>
+							</div>
+					</div>
 				</form>
 			</fieldset>
 		</div>

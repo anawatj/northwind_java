@@ -13,15 +13,15 @@
 					<td>
 							<input type="checkbox"/>
 					</td>
-					<th>
-							
-					</th>
+					<td>
+							11
+					</td>
 					
 					<td>
-							
+							11
 					</td>
 					<td>	
-							
+							11
 					</td>
 			</tr>
 	</tbody>
