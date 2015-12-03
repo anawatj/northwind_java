@@ -17,6 +17,9 @@ public class Receipts extends AbstractDomain<Long> {
 	public Receipts()
 	{
 		this.orders = new HashSet<Orders>();
+		this.cashes =new HashSet<ReceiptCash>();
+		this.cheques= new HashSet<ReceiptCheque>();
+		this.banks = new HashSet<ReceiptBank>();
 	}
 	private String receiptCode;
 	private Date receiptDate;
