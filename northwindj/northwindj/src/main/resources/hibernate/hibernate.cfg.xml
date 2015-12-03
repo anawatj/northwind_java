@@ -24,6 +24,14 @@
     		<mapping resource="/hibernate/PurchaseDetailsMap.hbm.xml"/>
     		<mapping resource="/hibernate/OrdersMap.hbm.xml"/>
     		<mapping resource="/hibernate/OrderDetailsMap.hbm.xml"/>
+    		<mapping resource="/hibernate/BankMap.hbm.xml"/>
+    		<mapping resource="/hibernate/BankBranchMap.hbm.xml"/>
+    		<mapping resource="/hibernate/PaymentsMap.hbm.xml"/>
+    		<mapping resource="/hibernate/ReceiptsMap.hbm.xml"/>
+    		<mapping resource="/hibernate/ReceiptCashMap.hbm.xml"/>
+    		<mapping resource="/hibernate/ReceiptBankMap.hbm.xml"/>
+    		<mapping resource="/hibernate/ReceiptChequeMap.hbm.xml"/>
+    		
     		
     </session-factory>
 </hibernate-configuration>

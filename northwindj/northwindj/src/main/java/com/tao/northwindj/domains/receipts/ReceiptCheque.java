@@ -14,17 +14,17 @@ public class ReceiptCheque extends AbstractDomain<Long> {
 		{
 			
 		}
-		private Long receiveId;
+		private Long receiptId;
 		private String chequeNo;
 		private Date chequeDate;
 		private Bank chequeBank;
 		private BankBranch chequeBankBranch;
 		private Double chequeAmt;
-		public Long getReceiveId() {
-			return receiveId;
+		public Long getReceiptId() {
+			return receiptId;
 		}
-		public void setReceiveId(Long receiveId) {
-			this.receiveId = receiveId;
+		public void setReceiptId(Long receiptId) {
+			this.receiptId = receiptId;
 		}
 		public String getChequeNo() {
 			return chequeNo;

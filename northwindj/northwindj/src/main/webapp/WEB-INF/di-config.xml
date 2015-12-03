@@ -13,4 +13,7 @@
 		<bean id="shippersRepository"  class="com.tao.northwindj.repositories.imp.ShippersRepository"></bean>
 		<bean id="suppliersRepository" class="com.tao.northwindj.repositories.imp.SuppliersRepository"></bean>
 		<bean id="territoriesRepository" class="com.tao.northwindj.repositories.imp.TerritoriesRepository"></bean>
+		<bean id="paymentsRepository" class="com.tao.northwindj.repositories.imp.PaymentsRepository"></bean>
+		<bean id="receiptsRepository" class="com.tao.northwindj.repositories.imp.ReceiptsRepository"></bean>
+		
 </beans>

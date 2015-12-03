@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd" >
+<hibernate-mapping>
+	<class name="com.tao.northwindj.domains.receipts.Receipts" table="tbl_receipts">
+		<id name="id" column="id" type="long">
+			<generator class="native"></generator>
+		</id>
+		<version name="version" column="version"></version>
+		<property name="receiptCode" column="receipt_code" length="20"></property>
+		<property name="receiptDate" column="receipt_date"></property>
+		<many-to-one name="employees"
+			class="com.tao.northwindj.domains.employees.Employees" column="employee_id"
+			lazy="proxy" not-found="ignore"></many-to-one>
+		<many-to-one name="receiptFrom"
+			class="com.tao.northwindj.domains.customers.Customers" column="customer_id"
+			lazy="proxy" not-found="ignore"></many-to-one>
+		<property name="receiveAmt" column="receive_amt"></property>
+		<property name="receiveTotal" column="receive_total"></property>
+		<set name="orders" cascade="all" lazy="true" table="tbl_receipts_orders">
+			<key column="receipt_id"></key>
+			<many-to-many class="com.tao.northwindj.domains.orders.Orders"
+				column="order_id" not-found="ignore" foreign-key="fk_orders_receipts"></many-to-many>
+		</set>
+		<set name="banks" cascade="all-delete-orphan" lazy="true">
+			<key column="receipt_id" foreign-key="fk_receipts_receipts_bank"></key>
+			<one-to-many class="com.tao.northwindj.domains.receipts.ReceiptBank"
+				not-found="ignore" />
+		</set>
+		<set name="cashes" cascade="all-delete-orphan" lazy="true">
+			<key column="receipt_id" foreign-key="fk_receipts_receipts_cash"></key>
+			<one-to-many class="com.tao.northwindj.domains.receipts.ReceiptCash"
+				not-found="ignore" />
+		</set>
+		<set name="cheques" cascade="all-delete-orphan" lazy="true">
+			<key column="receipt_id" foreign-key="fk_receipts_receipts_cheque"></key>
+			<one-to-many class="com.tao.northwindj.domains.receipts.ReceiptCheque"
+				not-found="ignore" />
+
+		</set>
+		<property name="createBy" column="create_by" length="20"></property>
+		<property name="createDate" column="create_date"></property>
+		<property name="updateBy" column="update_by" length="20"></property>
+		<property name="updateDate" column="update_date"></property>
+	</class>
+</hibernate-mapping>

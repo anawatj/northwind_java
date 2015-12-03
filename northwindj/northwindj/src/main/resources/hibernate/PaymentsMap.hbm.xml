@@ -15,7 +15,7 @@
 			class="com.tao.northwindj.domains.suppliers.Suppliers" column="supplier_id"
 			lazy="proxy" not-found="ignore"></many-to-one>
 		<property name="paymentTotal" column="payment_total"></property>
-		<set name="purchases" cascade="all" lazy="true">
+		<set name="purchases" cascade="all" lazy="true" table="tbl_payments_purchases">
 			<key column="payment_id"></key>
 			<many-to-many class="com.tao.northwindj.domains.purchases.Purchases"
 				column="purchase_id" foreign-key="fk_purchases_payments" not-found="ignore"></many-to-many>
