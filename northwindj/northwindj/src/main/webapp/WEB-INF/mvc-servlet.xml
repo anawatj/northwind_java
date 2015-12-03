@@ -49,6 +49,14 @@
 	<mvc:view-controller path="/suppliers/searchModal.html"/>
 	<mvc:view-controller path="/territories/entry.html"/>
 	<mvc:view-controller path="/territories/list.html"/>
+	<mvc:view-controller path="/receipts/entry.html"/>
+	<mvc:view-controller path="/receipts/tabOrders.html"/>
+	<mvc:view-controller path="/receipts/tabCash.html"/>
+	<mvc:view-controller path="/receipts/tabBank.html"/>
+	<mvc:view-controller path="/receipts/tabCheque.html"/>
+	<mvc:view-controller path="/receipts/list.html"/>
+	<mvc:view-controller path="/payments/entry.html"/>
+	<mvc:view-controller path="/payments/list.html"/>
 	
 	<bean id="viewResolver"
 		class="org.springframework.web.servlet.view.InternalResourceViewResolver">

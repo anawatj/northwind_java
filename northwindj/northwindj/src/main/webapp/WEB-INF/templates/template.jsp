@@ -219,6 +219,34 @@
 												class="glyphicon glyphicon-chevron-right"></i>Search</a></li>
 									</ul>
 								</div></li>
+								
+																	<li class="list-group-item"><a href="#receipts"
+								data-toggle="collapse"><i
+									class="glyphicon glyphicon-folder-close"></i>Receipts</a>
+								<div id="receipts" class="panel-collapse collapse">
+									<ul class="list-group">
+										<li class="list-group-item"><a
+											href="${context }/receipts/entry.html"><i
+												class="glyphicon glyphicon-chevron-right"></i>Create</a></li>
+										<li class="list-group-item"><a
+											href="${context }/receipts/list.html"><i
+												class="glyphicon glyphicon-chevron-right"></i>Search</a></li>
+									</ul>
+								</div></li>
+								
+																			<li class="list-group-item"><a href="#payments"
+								data-toggle="collapse"><i
+									class="glyphicon glyphicon-folder-close"></i>Payments</a>
+								<div id="payments" class="panel-collapse collapse">
+									<ul class="list-group">
+										<li class="list-group-item"><a
+											href="${context }/payments/entry.html"><i
+												class="glyphicon glyphicon-chevron-right"></i>Create</a></li>
+										<li class="list-group-item"><a
+											href="${context }/payments/list.html"><i
+												class="glyphicon glyphicon-chevron-right"></i>Search</a></li>
+									</ul>
+								</div></li>
 
 						</ul>
 
