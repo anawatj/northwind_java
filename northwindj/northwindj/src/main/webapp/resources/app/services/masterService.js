@@ -32,6 +32,14 @@ app.factory('masterService',['$http',function($http)
 									{
 										return $http.get(url+"master/title/all");
 									};
+									factory.getAllBank=function()
+									{
+										return $http.get(url+"master/bank/all");
+									};
+									factory.getAllBranch=function(bankId)
+									{
+										return  $http.get(url+"master/bankbranch/all",{params:{id:bankId}});
+									};
 									return factory;
 									
                              }]);	
