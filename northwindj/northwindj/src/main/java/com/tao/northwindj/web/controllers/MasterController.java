@@ -12,6 +12,8 @@ import org.springframework.web.bind.annotation.ResponseBody;
 
 import com.tao.northwindj.domains.Result;
 import com.tao.northwindj.domains.SimpleMasterObject;
+import com.tao.northwindj.domains.master.Bank;
+import com.tao.northwindj.domains.master.BankBranch;
 import com.tao.northwindj.domains.master.City;
 import com.tao.northwindj.domains.master.Country;
 import com.tao.northwindj.domains.master.DemoGraphics;
@@ -81,5 +83,25 @@ public class MasterController {
 	{
 		Result<SimpleMasterObject> result = mRepository.findAll(Title.class);
 		return result.getFullResult();
+	}
+	@RequestMapping(value="/bank/all",method=RequestMethod.GET)
+	@Transactional
+	public @ResponseBody Result<SimpleMasterObject> getAllBank()
+	{
+		Result<SimpleMasterObject> result = mRepository.findAll(Bank.class);
+		return result.getFullResult();
+		
+ 	}
+	@RequestMapping(value="/bankbranch/all",method=RequestMethod.GET)
+	@Transactional
+	public @ResponseBody Result<SimpleMasterObject> getAllBankBranch(@RequestParam Long id)
+	{
+		Vector<String> fields = new Vector<String>();
+		fields.add("bankId");
+		Vector<Object> values = new Vector<Object>();
+		values.add(id);
+		Result<SimpleMasterObject> result= mRepository.findAll(BankBranch.class, fields, values);
+		return result.getFullResult();
+	
 	}
 }
