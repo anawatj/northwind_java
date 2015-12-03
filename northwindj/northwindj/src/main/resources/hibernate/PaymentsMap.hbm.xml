@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd" >
+<hibernate-mapping>
+	<class name="com.tao.northwindj.domains.payments.Payments" table="tbl_payments">
+		<id name="id" column="id" type="long">
+			<generator class="native"></generator>
+		</id>
+		<version name="version" column="version"></version>
+		<property name="paymentCode" column="payment_code" length="20"></property>
+		<property name="paymentDate" column="payment_date"></property>
+		<many-to-one name="employee"
+			class="com.tao.northwindj.domains.employees.Employees" column="employee_id"
+			lazy="proxy" not-found="ignore"></many-to-one>
+		<many-to-one name="paymentTo"
+			class="com.tao.northwindj.domains.suppliers.Suppliers" column="supplier_id"
+			lazy="proxy" not-found="ignore"></many-to-one>
+		<property name="paymentTotal" column="payment_total"></property>
+		<set name="purchases" cascade="all" lazy="true">
+			<key column="payment_id"></key>
+			<many-to-many class="com.tao.northwindj.domains.purchases.Purchases"
+				column="purchase_id" foreign-key="fk_purchases_payments" not-found="ignore"></many-to-many>
+		</set>
+		<property name="createBy" column="create_by" length="20"></property>
+		<property name="createDate" column="create_date"></property>
+		<property name="updateBy" column="update_by" length="20"></property>
+		<property name="updateDate" column="update_date"></property>
+	</class>
+</hibernate-mapping>
