@@ -13,6 +13,12 @@ public class PurchasesQuery extends AbstractQuery{
 	private Long supplier;
 	private Long employee;
 	private Date purchaseDateStart;
+
+	private Date purchaseDateEnd;
+	private Date requireDateStart;
+	private Date requireDateEnd;
+	
+	
 	public Long getSupplier() {
 		return supplier;
 	}
@@ -49,8 +55,5 @@ public class PurchasesQuery extends AbstractQuery{
 	public void setRequireDateEnd(Date requireDateEnd) {
 		this.requireDateEnd = requireDateEnd;
 	}
-	private Date purchaseDateEnd;
-	private Date requireDateStart;
-	private Date requireDateEnd;
 	
 }
