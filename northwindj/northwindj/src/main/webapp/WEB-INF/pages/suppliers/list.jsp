@@ -109,6 +109,10 @@
 							</tr>
 						</tbody>
 					</table>
+						<pagination ng-model="model.page" ng-change="search()"
+							total-items="totalItems" num-pages="numPages"
+							items-per-page="pageSize" max-size="maxSize"
+							class="pagination-xs" boundary-links="true" rotate="false"></pagination>
 				</div>
 			</div>
 		</div>
