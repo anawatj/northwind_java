@@ -92,6 +92,8 @@ public class PurchasesRepository implements IPurchasesRepository {
 		{
 			criteria.add(Restrictions.le("requireDate", query.getRequireDateEnd()));
 		}
+		criteria.setFetchMode("employee", FetchMode.JOIN);
+		criteria.setFetchMode("employee.title", FetchMode.JOIN);
 		return new Result<Purchases>(criteria);
 		
 	}
