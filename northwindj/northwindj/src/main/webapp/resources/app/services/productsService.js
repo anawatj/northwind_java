@@ -23,7 +23,7 @@ app.factory("productsService", [ '$http', function($http) {
 		var model = {
 			id : key
 		};
-		return $http.post(Url + "products/delete", model);
+		return $http.post(url + "products/delete", model);
 	};
 	return factory;
 } ]);

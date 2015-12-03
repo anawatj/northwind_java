@@ -23,7 +23,7 @@ app.factory('employeesService',['$http',function($http)
 									factory.remove=function(key)
 									{
 										var model = {id:key};
-										return $http.post(Url+"employees/delete",model);
+										return $http.post(url+"employees/delete",model);
 									};
 									return factory;
                                 }]);

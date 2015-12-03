@@ -23,7 +23,7 @@ app.factory("territoriesService", [ '$http', function($http) {
 		var model = {
 			id : key
 		};
-		return $http.post(Url + "territories/delete", model);
+		return $http.post(url + "territories/delete", model);
 	};
 	return factory;
 } ]);
