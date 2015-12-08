@@ -15,14 +15,17 @@ app.controller('employeesListCtrl',function($scope,masterService,employeesServic
 	};
 	$scope.load=function()
 	{
+		$('#pleaseWaitDialog').modal('show');
 			masterService.getAllDepartment()
 			.success(function(data)
 				{
 					$scope.departments=data.list;
+					$('#pleaseWaitDialog').modal('hide');
 				});
 	};
 	$scope.search=function()
 	{
+		$('#pleaseWaitDialog').modal('show');
 		if($scope.model.page==undefined)
 		{
 			$scope.model.page=1;
@@ -33,6 +36,7 @@ app.controller('employeesListCtrl',function($scope,masterService,employeesServic
 			$scope.pages= data.pages;
 			$scope.results =data.list;
 			$scope.totalItems= data.totalRecord;
+			$('#pleaseWaitDialog').modal('hide');
 		});
 	};
 	$scope.clear=function()

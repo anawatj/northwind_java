@@ -14,6 +14,7 @@ app.controller('purchasesListCtrl',function($scope,purchasesService,$modal,confi
 	};
 	$scope.search=function()
 	{
+		$('#pleaseWaitDialog').modal('show');
 		if($scope.model.page==undefined)
 		{
 			$scope.model.page=1;
@@ -24,6 +25,7 @@ app.controller('purchasesListCtrl',function($scope,purchasesService,$modal,confi
 			$scope.pages= data.pages;
 			$scope.results =data.list;
 			$scope.totalItems= data.totalRecord;
+			$('#pleaseWaitDialog').modal('hide');
 		});
 	};
 	$scope.edit=function(item)

@@ -12,6 +12,7 @@ app.controller('categoriesEntryCtrl',function($scope,categoriesService,$pageUtil
 				{
 					$scope.id=0;
 				}
+				$('#pleaseWaitDialog').modal('show');
 				$scope.load();
 			};
 			$scope.load=function()
@@ -27,6 +28,7 @@ app.controller('categoriesEntryCtrl',function($scope,categoriesService,$pageUtil
 									$scope.model={};
 									$scope.model.id=0;
 							}
+							$('#pleaseWaitDialog').modal('hide');
 						});
 			};
 			$scope.save=function()

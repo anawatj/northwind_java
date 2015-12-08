@@ -15,10 +15,11 @@ app.controller('suppliersEntryCtrl',function($scope,masterService,suppliersServi
 		{
 			$scope.id=0;
 		}
+		$('#pleaseWaitDialog').modal('show');
 		var promise= $scope.load();
 		promise.then(function()
 				{
-			
+			$('#pleaseWaitDialog').modal('hide');
 				});
 	};
 	$scope.load=function()

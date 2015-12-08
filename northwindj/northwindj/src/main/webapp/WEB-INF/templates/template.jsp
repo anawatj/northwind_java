@@ -10,11 +10,13 @@
 <title>Northwind System</title>
 <link rel="stylesheet"
 	href="${context}/webjars/bootstrap/3.3.5/css/bootstrap.min.css" />
-	
-<link rel="stylesheet" href="${context }/resources/css/side-menu.css" />
-<link rel= "stylesheet" href="${context }/resources/kendo/style/kendo.common-bootstrap.min.css"/>
-<link rel="stylesheet" href="${context }/resources/kendo/style/kendo.bootstrap.min.css"/>
 
+<link rel="stylesheet" href="${context }/resources/css/side-menu.css" />
+<link rel="stylesheet"
+	href="${context }/resources/kendo/style/kendo.common-bootstrap.min.css" />
+<link rel="stylesheet"
+	href="${context }/resources/kendo/style/kendo.bootstrap.min.css" />
+<link rel="stylesheet" href="${context }/resources/css/main.css" />
 
 <%-- <link rel="stylesheet" href="${context}/resources/theme/css/material.min.css"/> --%>
 <script type="text/javascript"
@@ -24,8 +26,10 @@
 <%-- <script type="text/javascript" src="${context}/resources/theme/js/material.min.js"></script> --%>
 <script type="text/javascript"
 	src="${context}/webjars/angularjs/1.4.4/angular.min.js"></script>
-<script type="text/javascript" src="${context }/resources/kendo/script/kendo.ui.core.min.js"></script>
-<script type="text/javascript" src="${context }/resources/kendo/script/kendo.angular.min.js"></script>
+<script type="text/javascript"
+	src="${context }/resources/kendo/script/kendo.ui.core.min.js"></script>
+<script type="text/javascript"
+	src="${context }/resources/kendo/script/kendo.angular.min.js"></script>
 <script type="text/javascript"
 	src="${context }/resources/lib/ui-bootstrap-tpls-0.14.3.min.js"></script>
 <script type="text/javascript"
@@ -52,29 +56,51 @@
 <script type="text/javascript"
 	src="${context }/resources/app/services/territoriesService.js"></script>
 <script type="text/javascript"
+	src="${context }/resources/app/controllers/indexCtrl.js"></script>
+<script type="text/javascript"
 	src="${context }/resources/app/controllers/categories/entry.js"></script>
-<script type="text/javascript" src="${context }/resources/app/controllers/categories/list.js"></script>
+<script type="text/javascript"
+	src="${context }/resources/app/controllers/categories/list.js"></script>
 <script type="text/javascript"
 	src="${context }/resources/app/controllers/customers/entry.js"></script>
-<script type="text/javascript" src="${context }/resources/app/controllers/customers/list.js"></script>
-<script type="text/javascript" src="${context }/resources/app/controllers/customers/searchModal.js"></script>
-<script type="text/javascript" src="${context }/resources/app/controllers/employees/entry.js"></script>
-<script type="text/javascript" src="${context }/resources/app/controllers/employees/list.js"></script>
-<script type="text/javascript" src="${context }/resources/app/controllers/employees/searchModal.js"></script>
-<script type="text/javascript" src="${context }/resources/app/controllers/products/entry.js"></script>
-<script type="text/javascript" src="${context }/resources/app/controllers/products/list.js"></script>
-<script type="text/javascript" src="${context }/resources/app/controllers/products/searchModal.js"></script>
-<script type="text/javascript" src="${context }/resources/app/controllers/shippers/entry.js"></script>
-<script type="text/javascript" src="${context }/resources/app/controllers/shippers/list.js"></script>
-<script type="text/javascript" src="${context }/resources/app/controllers/suppliers/entry.js"></script>
-<script type="text/javascript" src="${context }/resources/app/controllers/suppliers/list.js"></script>
-<script type="text/javascript" src="${context }/resources/app/controllers/suppliers/searchModal.js"></script>
-<script type="text/javascript" src="${context }/resources/app/controllers/territories/entry.js"></script>
-<script type="text/javascript" src="${context }/resources/app/controllers/territories/list.js"></script>
-<script type="text/javascript" src="${context }/resources/app/controllers/orders/entry.js"></script>
-<script type="text/javascript" src="${context }/resources/app/controllers/orders/list.js"></script>
-<script type="text/javascript" src="${context }/resources/app/controllers/purchases/entry.js"></script>
-<script type="text/javascript" src="${context }/resources/app/controllers/purchases/list.js"></script>
+<script type="text/javascript"
+	src="${context }/resources/app/controllers/customers/list.js"></script>
+<script type="text/javascript"
+	src="${context }/resources/app/controllers/customers/searchModal.js"></script>
+<script type="text/javascript"
+	src="${context }/resources/app/controllers/employees/entry.js"></script>
+<script type="text/javascript"
+	src="${context }/resources/app/controllers/employees/list.js"></script>
+<script type="text/javascript"
+	src="${context }/resources/app/controllers/employees/searchModal.js"></script>
+<script type="text/javascript"
+	src="${context }/resources/app/controllers/products/entry.js"></script>
+<script type="text/javascript"
+	src="${context }/resources/app/controllers/products/list.js"></script>
+<script type="text/javascript"
+	src="${context }/resources/app/controllers/products/searchModal.js"></script>
+<script type="text/javascript"
+	src="${context }/resources/app/controllers/shippers/entry.js"></script>
+<script type="text/javascript"
+	src="${context }/resources/app/controllers/shippers/list.js"></script>
+<script type="text/javascript"
+	src="${context }/resources/app/controllers/suppliers/entry.js"></script>
+<script type="text/javascript"
+	src="${context }/resources/app/controllers/suppliers/list.js"></script>
+<script type="text/javascript"
+	src="${context }/resources/app/controllers/suppliers/searchModal.js"></script>
+<script type="text/javascript"
+	src="${context }/resources/app/controllers/territories/entry.js"></script>
+<script type="text/javascript"
+	src="${context }/resources/app/controllers/territories/list.js"></script>
+<script type="text/javascript"
+	src="${context }/resources/app/controllers/orders/entry.js"></script>
+<script type="text/javascript"
+	src="${context }/resources/app/controllers/orders/list.js"></script>
+<script type="text/javascript"
+	src="${context }/resources/app/controllers/purchases/entry.js"></script>
+<script type="text/javascript"
+	src="${context }/resources/app/controllers/purchases/list.js"></script>
 
 <style type="text/css">
 .primary {
@@ -84,9 +110,30 @@
 }
 </style>
 </head>
-<body ng-app="northwind">
+<body ng-app="northwind" ng-controller="indexCtrl">
+	<div id="pleaseWaitDialog" class="modal fade" data-backdrop="static"
+		data-keyboard="false" aria-hidden="true">
+		<div class="modal-dialog">
+			<div class="modal-content">
+				<div class="modal-header">
+					<h4 class="modal-title">Loading</h4>
+				</div>
+				<div class="modal-body">
+				
+					<div class="progress">
+						<div class="progress-bar progress-bar-striped active"
+							role="progressbar" aria-valuenow="40" aria-valuemin="0"
+							aria-valuemax="100" style="width: 100%"></div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+	</div>
 	<div class="row">
-		<div class="col-xs-12"><h2>Northwind System</h2></div>
+		<div class="col-xs-12">
+			<h2>Northwind System</h2>
+		</div>
 	</div>
 	<div class="row">
 		<div class="col-xs-4">
@@ -167,7 +214,7 @@
 												class="glyphicon glyphicon-chevron-right"></i>Search</a></li>
 									</ul>
 								</div></li>
-									<li class="list-group-item"><a href="#products"
+							<li class="list-group-item"><a href="#products"
 								data-toggle="collapse"><i
 									class="glyphicon glyphicon-folder-close"></i>Products</a>
 								<div id="products" class="panel-collapse collapse">
@@ -180,7 +227,7 @@
 												class="glyphicon glyphicon-chevron-right"></i>Search</a></li>
 									</ul>
 								</div></li>
-									<li class="list-group-item"><a href="#shippers"
+							<li class="list-group-item"><a href="#shippers"
 								data-toggle="collapse"><i
 									class="glyphicon glyphicon-folder-close"></i>Shippers</a>
 								<div id="shippers" class="panel-collapse collapse">
@@ -193,7 +240,7 @@
 												class="glyphicon glyphicon-chevron-right"></i>Search</a></li>
 									</ul>
 								</div></li>
-									<li class="list-group-item"><a href="#suppliers"
+							<li class="list-group-item"><a href="#suppliers"
 								data-toggle="collapse"><i
 									class="glyphicon glyphicon-folder-close"></i>Suppliers</a>
 								<div id="suppliers" class="panel-collapse collapse">
@@ -206,7 +253,7 @@
 												class="glyphicon glyphicon-chevron-right"></i>Search</a></li>
 									</ul>
 								</div></li>
-									<li class="list-group-item"><a href="#territories"
+							<li class="list-group-item"><a href="#territories"
 								data-toggle="collapse"><i
 									class="glyphicon glyphicon-folder-close"></i>Territories</a>
 								<div id="territories" class="panel-collapse collapse">
@@ -219,8 +266,8 @@
 												class="glyphicon glyphicon-chevron-right"></i>Search</a></li>
 									</ul>
 								</div></li>
-								
-																	<li class="list-group-item"><a href="#receipts"
+
+							<li class="list-group-item"><a href="#receipts"
 								data-toggle="collapse"><i
 									class="glyphicon glyphicon-folder-close"></i>Receipts</a>
 								<div id="receipts" class="panel-collapse collapse">
@@ -233,8 +280,8 @@
 												class="glyphicon glyphicon-chevron-right"></i>Search</a></li>
 									</ul>
 								</div></li>
-								
-																			<li class="list-group-item"><a href="#payments"
+
+							<li class="list-group-item"><a href="#payments"
 								data-toggle="collapse"><i
 									class="glyphicon glyphicon-folder-close"></i>Payments</a>
 								<div id="payments" class="panel-collapse collapse">

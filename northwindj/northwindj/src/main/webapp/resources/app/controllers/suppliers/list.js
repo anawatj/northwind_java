@@ -12,9 +12,10 @@ app.controller('suppliersListCtrl', function($scope, masterService,
 	$scope.cities = [];
 	$scope.regions = [];
 	$scope.init = function() {
+		$('#pleaseWaitDialog').modal('show');
 		var promise = $scope.load();
 		promise.then(function() {
-
+			$('#pleaseWaitDialog').modal('hide');
 		});
 	};
 	$scope.load = function() {
@@ -38,6 +39,7 @@ app.controller('suppliersListCtrl', function($scope, masterService,
 		});
 	};
 	$scope.search = function() {
+		$('#pleaseWaitDialog').modal('show');
 		if ($scope.model.page == undefined) {
 			$scope.model.page = 1;
 		}
@@ -45,6 +47,7 @@ app.controller('suppliersListCtrl', function($scope, masterService,
 			$scope.pages = data.pages;
 			$scope.results = data.list;
 			$scope.totalItems = data.totalRecord;
+			$('#pleaseWaitDialog').modal('hide');
 		});
 	};
 	$scope.clear = function() {
