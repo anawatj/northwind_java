@@ -23,7 +23,14 @@ public class Purchases  extends AbstractDomain<Long>{
 	private Double freight;
 	private Shippers shipper;
 	private Set<PurchaseDetails> details;	
+	private String purchaseCode;
 	
+	public String getPurchaseCode() {
+		return purchaseCode;
+	}
+	public void setPurchaseCode(String purchaseCode) {
+		this.purchaseCode = purchaseCode;
+	}
 	public Set<PurchaseDetails> getDetails() {
 		return details;
 	}

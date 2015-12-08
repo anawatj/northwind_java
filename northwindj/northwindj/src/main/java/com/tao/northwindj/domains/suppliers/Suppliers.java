@@ -21,6 +21,13 @@ public class Suppliers extends AbstractDomain<Long>{
 	private String phone;
 	private String fax;
 	private String homePage;
+	private String supplierCode;
+	public String getSupplierCode() {
+		return supplierCode;
+	}
+	public void setSupplierCode(String supplierCode) {
+		this.supplierCode = supplierCode;
+	}
 	public String getCompanyName() {
 		return companyName;
 	}

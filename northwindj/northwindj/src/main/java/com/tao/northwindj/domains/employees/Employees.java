@@ -39,6 +39,13 @@ public class Employees extends AbstractDomain<Long> {
 	private Set<Education> educations;
 	private Set<Experiences> experiences;
 	private Department department;
+	private String employeeCode;
+	public String getEmployeeCode() {
+		return employeeCode;
+	}
+	public void setEmployeeCode(String employeeCode) {
+		this.employeeCode = employeeCode;
+	}
 	public Department getDepartment() {
 		if(department!=null&&(this.department.getId()==null || department.getId()==0))
 		{

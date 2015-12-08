@@ -14,6 +14,13 @@ public class SuppliersQuery extends AbstractQuery {
 	private Long city;
 	private Long region;
 	private Long country;
+	private String supplierCode;
+	public String getSupplierCode() {
+		return supplierCode;
+	}
+	public void setSupplierCode(String supplierCode) {
+		this.supplierCode = supplierCode;
+	}
 	public String getCompanyName() {
 		return companyName;
 	}

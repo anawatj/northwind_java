@@ -18,7 +18,15 @@ public class PurchasesQuery extends AbstractQuery{
 	private Date requireDateStart;
 	private Date requireDateEnd;
 	
+	private String purchaseCode;
 	
+	
+	public String getPurchaseCode() {
+		return purchaseCode;
+	}
+	public void setPurchaseCode(String purchaseCode) {
+		this.purchaseCode = purchaseCode;
+	}
 	public Long getSupplier() {
 		return supplier;
 	}

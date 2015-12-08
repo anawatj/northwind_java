@@ -20,6 +20,14 @@ public class Products extends AbstractDomain<Long>{
 	private Integer recorderLevel;
 	private Boolean discontinued;
 	
+	private String productCode;
+	
+	public String getProductCode() {
+		return productCode;
+	}
+	public void setProductCode(String productCode) {
+		this.productCode = productCode;
+	}
 	public String getProductName() {
 		return productName;
 	}

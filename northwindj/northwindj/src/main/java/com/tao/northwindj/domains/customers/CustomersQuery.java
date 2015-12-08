@@ -13,7 +13,14 @@ public class CustomersQuery extends AbstractQuery {
 	private Long region;
 	private Long city;
 	private Long country;
+	private String customerCode;
 	
+	public String getCustomerCode() {
+		return customerCode;
+	}
+	public void setCustomerCode(String customerCode) {
+		this.customerCode = customerCode;
+	}
 	public String getCompanyName() {
 		return companyName;
 	}

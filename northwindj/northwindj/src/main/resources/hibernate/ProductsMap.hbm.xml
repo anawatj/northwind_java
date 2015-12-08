@@ -6,6 +6,7 @@
 						<generator class="native"></generator>
 				</id>
 				<version name="version" column="version"></version>
+				<property name="productCode" column="product_code" length="20"></property>
 				<property name="productName" column="product_name" length="200"></property>
 				<many-to-one foreign-key="fk_products_categories" name="category" column="category_id" class="com.tao.northwindj.domains.categories.Categories" not-found="ignore"></many-to-one>
 				<many-to-one foreign-key="fk_products_suppliers" name="supplier" column="supplier_id" class="com.tao.northwindj.domains.suppliers.Suppliers" not-found="ignore"></many-to-one>

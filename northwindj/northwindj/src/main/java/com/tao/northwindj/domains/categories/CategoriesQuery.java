@@ -9,6 +9,13 @@ public class CategoriesQuery extends AbstractQuery {
 		
 	}
 	private String categoryName;
+	private String categoryCode;
+	public String getCategoryCode() {
+		return categoryCode;
+	}
+	public void setCategoryCode(String categoryCode) {
+		this.categoryCode = categoryCode;
+	}
 	public String getCategoryName() {
 		return categoryName;
 	}

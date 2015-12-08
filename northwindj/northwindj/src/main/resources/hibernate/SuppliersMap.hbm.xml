@@ -6,6 +6,7 @@
 						<generator class="native"></generator>
 				</id>
 				<version name="version" column="version"></version>
+				<property name="supplierCode" column="supplier_code" length="20"></property>
 				<property name="companyName" column="company_name" length="200"></property>
 				<property name="contactName" column="contact_name" length="200"></property>
 				<property name="contactTitle" column="contact_title" length="100"></property>

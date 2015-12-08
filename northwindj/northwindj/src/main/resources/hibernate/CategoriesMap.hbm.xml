@@ -7,6 +7,7 @@
 					<generator class="native"></generator>
 			</id>
 			<version name="version" column="version"></version>
+			<property name="categoryCode" column="category_code" length="20"></property>
 			<property name="categoryName" column="category_name" length="200"></property>
 			<property name="description" column="description" length="1000"></property>
 			<property name="createBy" column="create_by" length="20"></property>

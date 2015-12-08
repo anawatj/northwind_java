@@ -6,6 +6,7 @@
 						<generator class="native"></generator>
 				</id>
 				<version name="version" column="version"></version>
+				<property name="employeeCode" column="employee_code" length="20"></property>
 				<many-to-one foreign-key="fk_employees_title" name="title" column="title_id" class="com.tao.northwindj.domains.master.Title" not-found="ignore"></many-to-one>
 				<property name="firstName" column="first_name" length="200"></property>
 				<property name="lastName" column="last_name" length="200"></property>

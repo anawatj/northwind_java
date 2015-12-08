@@ -31,6 +31,13 @@ public class Orders extends AbstractDomain<Long> {
 	private String shipPostalCode;
 	private Country shipCountry;
 	private Set<OrderDetails> details;
+	private String orderCode;
+	public String getOrderCode() {
+		return orderCode;
+	}
+	public void setOrderCode(String orderCode) {
+		this.orderCode = orderCode;
+	}
 	public Customers getCustomer() {
 		if(this.customer!=null &&(this.customer.getId()==null || this.customer.getId()==0))
 		{

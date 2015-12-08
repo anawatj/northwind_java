@@ -11,6 +11,14 @@ public class Categories extends AbstractDomain<Long> {
 	}
 	private String categoryName;
 	private String description;
+	private String categoryCode;
+	
+	public String getCategoryCode() {
+		return categoryCode;
+	}
+	public void setCategoryCode(String categoryCode) {
+		this.categoryCode = categoryCode;
+	}
 	public String getCategoryName() {
 		return categoryName;
 	}

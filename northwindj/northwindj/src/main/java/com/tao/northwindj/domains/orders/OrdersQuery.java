@@ -16,7 +16,14 @@ public class OrdersQuery extends AbstractQuery {
 	private Date orderDateEnd;
 	private Date requireDateStart;
 	private Date requireDateEnd;
+	private String orderCode;
 	
+	public String getOrderCode() {
+		return orderCode;
+	}
+	public void setOrderCode(String orderCode) {
+		this.orderCode = orderCode;
+	}
 	public Long getCustomer() {
 		return customer;
 	}

@@ -13,6 +13,13 @@ public class ProductsQuery extends AbstractQuery{
 	private Long category;
 	private boolean discontinued;
 	private boolean hasInStock;
+	private String productCode;
+	public String getProductCode() {
+		return productCode;
+	}
+	public void setProductCode(String productCode) {
+		this.productCode = productCode;
+	}
 	public String getProductName() {
 		return productName;
 	}
