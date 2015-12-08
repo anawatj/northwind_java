@@ -21,7 +21,7 @@
 						<div class="col-xs-3">
 							<input kendo-date-picker k-format="'dd/MM/yyyy'" />
 						</div>
-						<div>
+						<div class="col-xs-3">
 							<label>To</label>
 						</div>
 						<div class="col-xs-3">
