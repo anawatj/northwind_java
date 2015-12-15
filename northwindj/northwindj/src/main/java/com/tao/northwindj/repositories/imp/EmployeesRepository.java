@@ -1,5 +1,7 @@
 package com.tao.northwindj.repositories.imp;
 
+import java.text.DecimalFormat;
+import java.text.NumberFormat;
 import java.util.List;
 
 import org.hibernate.Criteria;
@@ -59,7 +61,12 @@ public class EmployeesRepository implements IEmployeesRepository {
 
 	public Employees save(Employees entity) {
 			Employees data = findById(entity.getId());
-			Employees result = (Employees) factory.getCurrentSession().merge(entity);
+			Employees res = (Employees) factory.getCurrentSession().merge(entity);
+			NumberFormat format = new DecimalFormat("#000000000000000000");
+			String code ="EM"+ format.format(res.getId());
+			res.setEmployeeCode(code);
+			Employees result = (Employees) factory.getCurrentSession().merge(res);
+			
 			return result;
 	}
 

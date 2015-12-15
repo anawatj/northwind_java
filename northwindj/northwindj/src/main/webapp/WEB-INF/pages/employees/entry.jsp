@@ -6,6 +6,12 @@
 			<form>
 				<div class="row">
 					<div class="col-xs-3">
+						<label>EmployeeCode</label>
+					</div>
+					<div class="col-xs-3">
+						<input type="text" class="form-control" ng-model="model.employeeCode" disabled/>
+					</div>
+					<div class="col-xs-3">
 						<label>Title</label>
 					</div>
 					<div class="col-xs-3">
@@ -14,13 +20,16 @@
 								<option ng-repeat="item in titles" value="{{item.id}}" ng-selected="item.id==model.title.id">{{item.name}}</option>
 						</select>
 					</div>
+				</div>
+				<div class="row">
+					
 					<div class="col-xs-3">
 						<label>TitleOfCourtesy</label>
 					</div>
 					<div class="col-xs-3">
 						<input type="text" class="form-control" ng-model="model.titleOfCourstesy"/>
 					</div>
-
+				
 				</div>
 				<div class="row">
 					<div class="col-xs-3">
@@ -35,7 +44,7 @@
 					<div class="col-xs-3">
 						<input type="text" class="form-control" ng-model="model.lastName" />
 					</div>
-
+				
 				</div>
 				<div class="row">
 					<div class="col-xs-3">
