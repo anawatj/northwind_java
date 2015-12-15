@@ -1,5 +1,7 @@
 package com.tao.northwindj.repositories.imp;
 
+import java.text.DecimalFormat;
+import java.text.NumberFormat;
 import java.util.List;
 
 import org.hibernate.Criteria;
@@ -59,7 +61,11 @@ public class OrdersRepository implements IOrdersRepository{
 
 	public Orders save(Orders entity) {
 		Orders data = findById(entity.getId());
-		Orders result = (Orders) factory.getCurrentSession().merge(entity);
+		Orders res = (Orders) factory.getCurrentSession().merge(entity);
+		NumberFormat format = new DecimalFormat("#000000000000000000");
+		String code = "OD"+format.format(res.getId());
+		res.setOrderCode(code);
+		Orders result = (Orders) factory.getCurrentSession().merge(res);
 		return result;
 	}
 

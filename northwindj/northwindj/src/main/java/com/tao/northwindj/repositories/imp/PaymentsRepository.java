@@ -1,5 +1,7 @@
 package com.tao.northwindj.repositories.imp;
 
+import java.text.DecimalFormat;
+import java.text.NumberFormat;
 import java.util.List;
 
 import org.hibernate.Criteria;
@@ -52,7 +54,11 @@ public class PaymentsRepository implements IPaymentsRepository {
 
 	public Payments save(Payments entity) {
 		Payments data = findById(entity.getId());
-		Payments result = (Payments) factory.getCurrentSession().merge(entity);
+		Payments res = (Payments) factory.getCurrentSession().merge(entity);
+		NumberFormat format =new DecimalFormat("#000000000000000000");
+		String code = "PT"+format.format(res.getId());
+		res.setPaymentCode(code);
+		Payments result = (Payments) factory.getCurrentSession().merge(res);
 		return result;
 	}
 

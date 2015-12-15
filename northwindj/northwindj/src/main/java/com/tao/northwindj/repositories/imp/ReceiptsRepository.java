@@ -2,6 +2,8 @@ package com.tao.northwindj.repositories.imp;
 
 
 
+import java.text.DecimalFormat;
+import java.text.NumberFormat;
 import java.util.List;
 
 import org.hibernate.Criteria;
@@ -61,7 +63,11 @@ public class ReceiptsRepository implements IReceiptsRepository {
 
 	public Receipts save(Receipts entity) {
 		Receipts data = findById(entity.getId());
-		Receipts result = (Receipts) factory.getCurrentSession().merge(entity);
+		Receipts res = (Receipts) factory.getCurrentSession().merge(entity);
+		NumberFormat format = new DecimalFormat("#000000000000000000");
+		String code = "RC"+format.format(res.getId());
+		res.setReceiptCode(code);
+		Receipts result = (Receipts) factory.getCurrentSession().merge(res);
 		return result;
 	}
 

@@ -1,5 +1,7 @@
 package com.tao.northwindj.repositories.imp;
 
+import java.text.DecimalFormat;
+import java.text.NumberFormat;
 import java.util.List;
 
 import org.hibernate.Criteria;
@@ -56,7 +58,11 @@ public class ProductsRepository implements IProductsRepository {
 			entity.setUnitOnOrder(0);
 		}
 		Products data = findById(entity.getId());
-		Products result = (Products) factory.getCurrentSession().merge(entity);
+		Products res = (Products) factory.getCurrentSession().merge(entity);
+		NumberFormat format = new DecimalFormat("#000000000000000000");
+		String code = "PD"+format.format(res.getId());
+		res.setProductCode(code);
+		Products result = (Products) factory.getCurrentSession().merge(res);
 		return result;
 	}
 

@@ -1,5 +1,7 @@
 package com.tao.northwindj.repositories.imp;
 
+import java.text.DecimalFormat;
+import java.text.NumberFormat;
 import java.util.List;
 
 import org.hibernate.Criteria;
@@ -59,7 +61,11 @@ public class PurchasesRepository implements IPurchasesRepository {
 
 	public Purchases save(Purchases entity) {
 		Purchases data = findById(entity.getId());
-		Purchases result = (Purchases) factory.getCurrentSession().merge(entity);
+		Purchases res = (Purchases) factory.getCurrentSession().merge(entity);
+		NumberFormat format = new DecimalFormat("#000000000000000000");
+		String code = "PR"+format.format(res.getId());
+		res.setPurchaseCode(code);
+		Purchases result = (Purchases) factory.getCurrentSession().merge(res);
 		return result;
 	}
 
