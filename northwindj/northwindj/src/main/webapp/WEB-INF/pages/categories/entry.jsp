@@ -7,6 +7,14 @@
 						<legend>Categories Save</legend>
 						<form>
 								<div class="row">
+										<div class="col-xs-3">
+											<label>CategoryCode</label>
+										</div>
+										<div class="col-xs-6">
+												<input type="text" class="form-control" ng-model="model.categoryCode" disabled/>
+										</div>
+								</div>
+								<div class="row">
 									<div class="col-xs-3">
 											<label>CategoryName</label>
 									</div>

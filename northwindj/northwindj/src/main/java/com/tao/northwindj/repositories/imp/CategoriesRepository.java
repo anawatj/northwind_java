@@ -1,5 +1,7 @@
 package com.tao.northwindj.repositories.imp;
 
+import java.text.DecimalFormat;
+import java.text.NumberFormat;
 import java.util.List;
 import java.util.Locale.Category;
 
@@ -47,7 +49,11 @@ public class CategoriesRepository implements ICategoriesRepository{
 
 	public Categories save(Categories entity) {
 		Categories data= findById(entity.getId());
-		Categories result = (Categories) this.factory.getCurrentSession().merge(entity);
+		Categories res = (Categories) this.factory.getCurrentSession().merge(entity);
+		NumberFormat format =new DecimalFormat("#000000000000000000");
+		String code = "CA"+format.format(res.getId());
+		res.setCategoryCode(code);
+		Categories result = (Categories) this.factory.getCurrentSession().merge(res);
 		return result;
 	}
 
