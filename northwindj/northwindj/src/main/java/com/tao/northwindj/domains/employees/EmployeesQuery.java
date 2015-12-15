@@ -12,6 +12,13 @@ public class EmployeesQuery extends AbstractQuery {
 	private String lastName;
 	private Long department;
 	private String employeeCode;
+	private String departmentName;
+	public String getDepartmentName() {
+		return departmentName;
+	}
+	public void setDepartmentName(String departmentName) {
+		this.departmentName = departmentName;
+	}
 	public String getEmployeeCode() {
 		return employeeCode;
 	}

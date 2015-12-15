@@ -6,17 +6,23 @@
 			<form>
 				<div class="row">
 					<div class="col-xs-3">
-						<label>FirstName</label>
+							<label>EmployeeCode</label>
 					</div>
 					<div class="col-xs-9">
-						<input type="text" class="form-control" ng-model="model.firstName" />
+							<input type="text" class="form-control" ng-model="model.employeeCode"/>
 					</div>
 				</div>
 				<div class="row">
 					<div class="col-xs-3">
+						<label>FirstName</label>
+					</div>
+					<div class="col-xs-3">
+						<input type="text" class="form-control" ng-model="model.firstName" />
+					</div>
+					<div class="col-xs-3">
 						<label>LastName</label>
 					</div>
-					<div class="col-xs-9">
+					<div class="col-xs-3">
 						<input type="text" class="form-control" ng-model="model.lastName" />
 					</div>
 				</div>
@@ -24,11 +30,21 @@
 					<div class="col-xs-3">
 						<label>Department</label>
 					</div>
-					<div class="col-xs-9">
+					<div class="col-xs-3">
 						<select class="form-control" ng-model="model.department">
 							<option value="0"></option>
 							<option ng-repeat="item in departments" value="{{item.id}}">{{item.name}}</option>
 						</select>
+					</div>
+					<div class="col-xs-3">
+						<label>DepartmentName</label>
+					</div>
+					<div class="col-xs-3">
+							<input type="text" class="form-control" list="departmentList" ng-model="item.departmentName"/>
+							<datalist id="departmentList">
+								<option ng-repeat="item in departments" value="{{item.name}}">
+								</option>
+							</datalist>
 					</div>
 				</div>
 				<div class="row">

@@ -72,6 +72,16 @@ public class EmployeesRepository implements IEmployeesRepository {
 
 	public Result<Employees> findByQuery(EmployeesQuery query) {
 		Criteria criteria = factory.getCurrentSession().createCriteria(Employees.class);
+		if(query.getEmployeeCode()!=null && !query.getEmployeeCode().equals(""))
+		{
+			if(query.getEmployeeCode().contains("*") || query.getEmployeeCode().contains("?"))
+			{
+				criteria.add(Restrictions.like("employeeCode", query.getEmployeeCode().replace("*","%").replace("?","_")));
+			}else
+			{
+				criteria.add(Restrictions.eq("employeeCode", query.getEmployeeCode()));
+			}
+		}
 		if(query.getFirstName()!=null && !query.getFirstName().equals(""))
 		{
 			if(query.getFirstName().contains("*") || query.getFirstName().contains("?"))
