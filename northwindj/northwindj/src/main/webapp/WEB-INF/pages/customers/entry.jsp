@@ -11,7 +11,7 @@
 											<label>CustomerCode</label>
 										</div>
 										<div class="col-xs-3">
-											<input type="text" class="form-control" ng-model="model.customerCode"/>
+											<input type="text" class="form-control" ng-model="model.customerCode" disabled/>
 										</div>
 										<div class="col-xs-3">
 											<label>CompanyName</label>

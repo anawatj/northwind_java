@@ -2,6 +2,8 @@ package com.tao.northwindj.repositories.imp;
 
 
 
+import java.text.DecimalFormat;
+import java.text.NumberFormat;
 import java.util.List;
 
 import org.hibernate.Criteria;
@@ -56,7 +58,11 @@ public class CustomersRepository implements ICustomersRepository {
 
 	public Customers save(Customers entity) {
 		Customers data = findById(entity.getId());
-		Customers result = (Customers) factory.getCurrentSession().merge(entity);
+		Customers res = (Customers) factory.getCurrentSession().merge(entity);
+		NumberFormat format = new DecimalFormat("#000000000000000000");
+		String code = "CU"+format.format(res.getId());
+		res.setCustomerCode(code);
+		Customers result = (Customers) factory.getCurrentSession().merge(res);
 		return result;
 	}
 
