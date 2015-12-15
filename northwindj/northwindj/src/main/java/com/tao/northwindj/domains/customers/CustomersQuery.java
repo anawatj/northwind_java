@@ -11,10 +11,18 @@ public class CustomersQuery extends AbstractQuery {
 	private String contactName;
 	private String contactTitle;
 	private Long region;
+	
 	private Long city;
 	private Long country;
 	private String customerCode;
+	private String regionName;
 	
+	public String getRegionName() {
+		return regionName;
+	}
+	public void setRegionName(String regionName) {
+		this.regionName = regionName;
+	}
 	public String getCustomerCode() {
 		return customerCode;
 	}

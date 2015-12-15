@@ -7,13 +7,27 @@
 						<legend>Customers List</legend>
 						<form>
 									<div class="row">
-									
+										<div class="col-xs-3">
+												<label>CustomerCode</label>
+										</div>
+										<div class="col-xs-9">
+												<input type="text" class="form-control" ng-model="model.customerCode"/>
+										</div>
 										<div class="col-xs-3">
 											<label>CompanyName</label>
 										</div>
 										<div class="col-xs-3">
 											<input type="text" class="form-control" ng-model="model.companyCode"/>
 										</div>
+									</div>
+									<div class="row">
+									<div class="col-xs-3">
+											<label>ContactTitle</label>
+										</div>
+										<div class="col-xs-3">
+												<input type="text" class="form-control" ng-model="model.contactTitle"/>
+										</div>
+										
 											<div class="col-xs-3">
 											<label>ContactName</label>
 										</div>
@@ -23,20 +37,25 @@
 								</div>
 								<div class="row">
 									
-										<div class="col-xs-3">
-											<label>ContactTitle</label>
-										</div>
-										<div class="col-xs-3">
-												<input type="text" class="form-control" ng-model="model.contactTitle"/>
-										</div>
+										
 												<div class="col-xs-3">
 												<label>Region</label>
 										</div>
+										
 										<div class="col-xs-3">
 												<select class="form-control" ng-model="model.region">
 														<option value="0"></option>
 														<option ng-repeat="item in regions" value="{{item.id}}">{{item.name}}</option>
 												</select>
+										</div>
+										<div class="col-xs-3">
+												<label>RegionName</label>
+										</div>
+										<div class="col-xs-3">
+												<input type="text" class="form-control" list="regionList" ng-model="model.regionName"/>
+												<datalist id="regionList">
+														<option ng-repeat="item in regions" value="{{item.name}}"></option>
+												</datalist>
 										</div>
 								</div>
 											<div class="row">

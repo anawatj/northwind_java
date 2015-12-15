@@ -68,6 +68,16 @@ public class CustomersRepository implements ICustomersRepository {
 
 	public Result<Customers> findByQuery(CustomersQuery query) {
 		Criteria criteria = factory.getCurrentSession().createCriteria(Customers.class);
+		if(query.getCustomerCode()!=null && !query.getCustomerCode().equals(""))
+		{
+			if(query.getCustomerCode().contains("*") || query.getCustomerCode().contains("?"))
+			{
+				criteria.add(Restrictions.like("customerCode", query.getCustomerCode().replace("*","%").replace("?","_")));
+			}else
+			{
+				criteria.add(Restrictions.eq("customerCode", query.getCustomerCode()));
+			}
+		}
 		if(query.getCompanyName()!=null && !query.getCompanyName().equals(""))
 		{
 			if(query.getCompanyName().contains("*") || query.getCompanyName().contains("?"))
@@ -113,6 +123,18 @@ public class CustomersRepository implements ICustomersRepository {
 		{
 			criteria.createAlias("country","co",JoinType.LEFT_OUTER_JOIN);
 			criteria.add(Restrictions.eq("co.id", query.getCountry()));
+		}
+		if(query.getRegionName()!=null && !query.getRegionName().equals(""))
+		{
+			criteria.createAlias("region", "r2",JoinType.LEFT_OUTER_JOIN);
+			if(query.getRegionName().contains("*") || query.getRegionName().contains("?"))
+			{
+				criteria.add(Restrictions.like("r2.name",query.getRegionName().replace("*", "%").replace("?", "_")));
+			}else
+			{
+				criteria.add(Restrictions.eq("r2.name",query.getRegionName()));
+				
+			}
 		}
 		criteria.setFetchMode("city", FetchMode.JOIN);
 		criteria.setFetchMode("region", FetchMode.JOIN);
