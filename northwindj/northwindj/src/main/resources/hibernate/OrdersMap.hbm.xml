@@ -20,7 +20,7 @@
 				<many-to-one foreign-key="fk_orders_ship_regions" name="shipRegion" column="ship_region"  class="com.tao.northwindj.domains.master.Regions" not-found="ignore"></many-to-one>
 				<many-to-one foreign-key="fk_orders_ship_country" name="shipCountry" column="ship_country" class="com.tao.northwindj.domains.master.Country" not-found="ignore"></many-to-one>
 				<property name="shipPostalCode" column="ship_postal_code" length="20"></property>
-				<set name="details" cascade="all-delete-orphan" lazy="true">
+				<set name="details" cascade="all-delete-orphan" lazy="true" inverse="true" >
 						<key column="order_id" foreign-key="fk_order_details_order"></key>
 						<one-to-many class="com.tao.northwindj.domains.orders.OrderDetails" not-found="ignore"/>
 				</set>
